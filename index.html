@@ -2,110 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neon Cyber Personal Profile // Cyberpunk Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>PIYUSH | Official Cyber Profile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Background Cyber Elements -->
+  <div class="cyber-bg">
+    <div class="glow-orb glow-top-left"></div>
+    <div class="glow-orb glow-bottom-right"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
   <div class="scanlines" id="scanlines-layer"></div>
 
   <!-- Toast Notifications Container -->
   <div class="cyber-toast-container" id="toast-container"></div>
 
-  <!-- Mobile Top Bar Header -->
-  <header class="mobile-top-bar">
-    <div style="display:flex; align-items:center; gap:10px;">
-      <div class="brand-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      </div>
-      <span class="cyber-font text-gradient" style="font-size:1.1rem; font-weight:800;">CYBER//PROFILE</span>
-    </div>
-    <button class="menu-toggle-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-      </svg>
-    </button>
-  </header>
-
-  <div class="app-container">
-    
-    <!-- Cyberpunk Sidebar Navigation -->
-    <aside class="cyber-sidebar" id="app-sidebar">
-      <div class="sidebar-header">
-        <div class="brand-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <!-- Top Sticky Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" data-nav="home">
+        <div class="logo-icon">
+          <span class="logo-core"></span>
+          <span class="logo-ring"></span>
         </div>
-        <div>
-          <div class="brand-title text-gradient">NEON CYBER</div>
-          <div style="font-size:0.7rem; color:var(--text-muted); letter-spacing:1px;">PROFILE OS 2.0</div>
-        </div>
-        <span class="brand-version">v2.4</span>
-      </div>
+        <span class="logo-text">PIYUSH <span class="text-cyan">Profile</span></span>
+      </a>
 
-      <nav class="sidebar-nav">
-        <a class="nav-item active" data-section="home">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-          Home
-        </a>
-        <a class="nav-item" data-section="profile">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-          My Profile
-        </a>
-        <a class="nav-item" data-section="about">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-          About Me
-        </a>
-        <a class="nav-item" data-section="skills">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          My Skills
-          <span class="nav-badge" id="nav-skills-badge">6</span>
-        </a>
-        <a class="nav-item" data-section="projects">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
-          My Projects
-          <span class="nav-badge" id="nav-projects-badge">3</span>
-        </a>
-        <a class="nav-item" data-section="gallery">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-          Gallery
-          <span class="nav-badge" id="nav-gallery-badge">4</span>
-        </a>
-        <a class="nav-item" data-section="music">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
-          Favourite Music
-        </a>
-        <a class="nav-item" data-section="socials">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-          Social Links
-        </a>
-        <a class="nav-item" data-section="settings">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
-          Settings
-        </a>
+      <!-- Desktop Navigation -->
+      <nav class="nav-links">
+        <a class="nav-link active" data-section="home">Home</a>
+        <a class="nav-link" data-section="profile">Profile</a>
+        <a class="nav-link" data-section="about">About</a>
+        <a class="nav-link" data-section="skills">Skills</a>
+        <a class="nav-link" data-section="projects">Projects</a>
+        <a class="nav-link" data-section="gallery">Gallery</a>
+        <a class="nav-link" data-section="music">Music</a>
+        <a class="nav-link" data-section="socials">Socials</a>
+        <a class="nav-link" data-section="settings">Settings</a>
       </nav>
 
-      <div class="sidebar-footer">
-        <div class="user-quick-profile">
-          <img src="assets/images/default-avatar.svg" alt="Avatar" class="quick-avatar" id="sidebar-avatar">
-          <div class="quick-info">
-            <span class="quick-name" id="sidebar-name">Alex Vance</span>
-            <span class="quick-handle" id="sidebar-handle">@cyber_alex</span>
-          </div>
-        </div>
+      <div class="nav-actions">
+        <button class="btn btn-nav" id="btn-top-edit-profile">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+          </svg>
+          <span>Edit Profile</span>
+        </button>
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </aside>
+    </div>
 
-    <!-- Main Content Wrapper -->
-    <main class="main-wrapper">
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a class="mobile-nav-link active" data-section="home">Home</a>
+      <a class="mobile-nav-link" data-section="profile">My Profile</a>
+      <a class="mobile-nav-link" data-section="about">About Me</a>
+      <a class="mobile-nav-link" data-section="skills">My Skills</a>
+      <a class="mobile-nav-link" data-section="projects">My Projects</a>
+      <a class="mobile-nav-link" data-section="gallery">Cyber Gallery</a>
+      <a class="mobile-nav-link" data-section="music">Favourite Music</a>
+      <a class="mobile-nav-link" data-section="socials">Social Links</a>
+      <a class="mobile-nav-link" data-section="settings">Settings</a>
+      <div style="margin-top:0.8rem;">
+        <a href="music.html" class="btn btn-pink" style="width:100%;">Open Full Music Player</a>
+      </div>
+    </div>
+  </header>
 
-      <!-- ================= 1. HOME SECTION ================= -->
-      <section class="cyber-section active" id="section-home">
+  <main>
+
+    <!-- Hero Profile Section -->
+    <section class="hero" id="hero">
+      <div class="container">
         
-        <!-- Banner & Hero Profile Card -->
-        <div class="profile-banner-card">
+        <div class="hero-banner-card">
           <div class="banner-cover-wrap">
             <img src="assets/images/default-cover.svg" alt="Cover" class="banner-cover-img" id="hero-cover">
             <div class="banner-overlay"></div>
@@ -116,92 +97,87 @@
               <img src="assets/images/default-avatar.svg" alt="Avatar" class="profile-avatar-img" id="hero-avatar">
             </div>
             <div class="profile-identity">
-              <div class="profile-name-row">
-                <h1 class="profile-name glow-text" id="hero-name">Alex Vance</h1>
-                <span class="profile-badge">PRO CYBER ENGINEER</span>
+              <div class="badge-pill">
+                <span class="badge-dot"></span>
+                <span class="badge-text">OFFICIAL CYBER PROFILE &bull; ARCHITECT</span>
               </div>
-              <div class="profile-handle" id="hero-handle">@cyber_alex</div>
+              <h1 class="profile-name">
+                <span class="gradient-text" id="hero-name">PIYUSH</span>
+              </h1>
+              <div class="profile-handle" id="hero-handle">@cyber_piyush</div>
               <p class="profile-tagline" id="hero-bio">
-                Building next-generation holographic interfaces and web audio systems. Cyberpunk enthusiast & full-stack architect.
+                Building next-generation holographic interfaces and low-latency audio systems. Full-stack cyber architect & creator.
               </p>
             </div>
             <div class="profile-actions">
-              <button class="cyber-btn" id="home-edit-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+              <button class="btn btn-primary btn-glow" id="hero-edit-btn">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
                 </svg>
-                EDIT PROFILE
+                <span>Edit Profile</span>
               </button>
+              <a href="music.html" class="btn btn-pc">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <span>Full Music Player</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Statistics Row -->
-        <div class="stats-grid">
-          <div class="cyber-card stat-card">
-            <div class="stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-            </div>
-            <div class="stat-info">
-              <span class="stat-val" id="stat-projects-count">3</span>
-              <span class="stat-lbl">Projects</span>
-            </div>
-          </div>
+      </div>
+    </section>
 
-          <div class="cyber-card stat-card">
-            <div class="stat-icon" style="color:var(--neon-pink); border-color:rgba(255,0,127,0.3); background:rgba(255,0,127,0.1);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            </div>
-            <div class="stat-info">
-              <span class="stat-val" id="stat-skills-count">6</span>
-              <span class="stat-lbl">Mastered Skills</span>
-            </div>
-          </div>
-
-          <div class="cyber-card stat-card">
-            <div class="stat-icon" style="color:var(--neon-purple); border-color:rgba(157,0,255,0.3); background:rgba(157,0,255,0.1);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2z"/></svg>
-            </div>
-            <div class="stat-info">
-              <span class="stat-val" id="stat-gallery-count">4</span>
-              <span class="stat-lbl">Gallery Shots</span>
-            </div>
-          </div>
-
-          <div class="cyber-card stat-card">
-            <div class="stat-icon" style="color:var(--neon-green); border-color:rgba(0,255,102,0.3); background:rgba(0,255,102,0.1);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
-            </div>
-            <div class="stat-info">
-              <span class="stat-val" id="stat-music-count">1</span>
-              <span class="stat-lbl">Favorite Tracks</span>
-            </div>
-          </div>
+    <!-- Metrics Banner -->
+    <section class="metrics-banner">
+      <div class="container metrics-grid">
+        <div class="metric-card">
+          <div class="metric-number" id="stat-projects-count">3</div>
+          <div class="metric-label">Deployed Projects</div>
         </div>
+        <div class="metric-card">
+          <div class="metric-number" id="stat-skills-count" style="color:var(--blue-primary);">6</div>
+          <div class="metric-label">Mastered Skills</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number" id="stat-gallery-count" style="color:var(--purple-accent);">4</div>
+          <div class="metric-label">Gallery Captures</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number" id="stat-music-count" style="color:var(--pink-accent);">1</div>
+          <div class="metric-label">Favorite Tracks</div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Dashboard Two-Column Grid -->
-        <div class="dashboard-grid">
-          <!-- Left Column: Featured Projects & Skills Preview -->
-          <div style="display:flex; flex-direction:column; gap:24px;">
+    <!-- ================= 1. HOME SECTION ================= -->
+    <section class="section-block active" id="section-home">
+      <div class="container">
+        
+        <div class="grid-2">
+          <!-- Left Column -->
+          <div style="display:flex; flex-direction:column; gap:1.8rem;">
             
-            <div class="cyber-card" style="padding:22px;">
-              <div class="section-header" style="margin-bottom:16px;">
-                <div class="section-title" style="font-size:1.2rem;">
+            <div class="glass-card">
+              <div class="section-header" style="margin-bottom:1.2rem;">
+                <div class="section-title" style="font-size:1.35rem;">
                   <span>FEATURED PROJECTS</span>
                 </div>
-                <button class="cyber-btn btn-sm btn-ghost" data-navigate="projects">VIEW ALL</button>
+                <button class="btn btn-sm btn-ghost" data-navigate="projects">VIEW ALL</button>
               </div>
               <div class="projects-grid" id="home-featured-projects">
                 <!-- Dynamically populated -->
               </div>
             </div>
 
-            <div class="cyber-card" style="padding:22px;">
-              <div class="section-header" style="margin-bottom:16px;">
-                <div class="section-title" style="font-size:1.2rem;">
-                  <span>CORE CAPABILITIES</span>
+            <div class="glass-card">
+              <div class="section-header" style="margin-bottom:1.2rem;">
+                <div class="section-title" style="font-size:1.35rem;">
+                  <span>CORE SKILLS PREVIEW</span>
                 </div>
-                <button class="cyber-btn btn-sm btn-ghost" data-navigate="skills">VIEW SKILLS</button>
+                <button class="btn btn-sm btn-ghost" data-navigate="skills">VIEW MATRIX</button>
               </div>
               <div class="skills-grid" id="home-skills-preview">
                 <!-- Dynamically populated -->
@@ -210,38 +186,38 @@
 
           </div>
 
-          <!-- Right Column: Music Mini Player & Quick Socials -->
-          <div style="display:flex; flex-direction:column; gap:24px;">
+          <!-- Right Column -->
+          <div style="display:flex; flex-direction:column; gap:1.8rem;">
             
-            <!-- Music Quick Widget -->
-            <div class="cyber-card" style="padding:22px;">
-              <div class="section-header" style="margin-bottom:16px;">
-                <div class="section-title" style="font-size:1.1rem;">
-                  <span>AUDIO SYNTHESIS</span>
+            <!-- Quick Music Widget -->
+            <div class="glass-card">
+              <div class="section-header" style="margin-bottom:1.2rem;">
+                <div class="section-title" style="font-size:1.2rem;">
+                  <span>CYBER AUDIO</span>
                 </div>
-                <a href="music.html" class="cyber-btn btn-sm btn-pink">FULL PLAYER</a>
+                <a href="music.html" class="btn btn-sm btn-pink">FULL PLAYER</a>
               </div>
-              <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
-                <img src="assets/images/default-album.svg" alt="Album" id="home-music-cover" style="width:65px; height:65px; border-radius:10px; border:1px solid var(--accent-primary); object-fit:cover;">
+              <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem;">
+                <img src="assets/images/default-album.svg" alt="Album" id="home-music-cover" style="width:65px; height:65px; border-radius:10px; border:1px solid var(--border-glass); object-fit:cover;">
                 <div style="overflow:hidden;">
-                  <div style="font-weight:700; font-size:1rem; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;" id="home-music-title">Neon Cyber Dream</div>
-                  <div style="font-size:0.8rem; color:var(--accent-primary);" id="home-music-artist">SynthWave Matrix</div>
+                  <div style="font-weight:700; font-size:1.05rem; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;" id="home-music-title">Neon Cyber Dream</div>
+                  <div style="font-size:0.85rem; color:var(--accent-primary);" id="home-music-artist">SynthWave Matrix</div>
                 </div>
               </div>
-              <button class="cyber-btn" id="home-play-toggle-btn" style="width:100%;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                PLAY TRACK
+              <button class="btn btn-primary btn-glow" id="home-play-toggle-btn" style="width:100%;">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <span>Play Sound Track</span>
               </button>
             </div>
 
             <!-- Social Links Quick Grid -->
-            <div class="cyber-card" style="padding:22px;">
-              <div class="section-header" style="margin-bottom:16px;">
-                <div class="section-title" style="font-size:1.1rem;">
-                  <span>CONNECT MATRIX</span>
+            <div class="glass-card">
+              <div class="section-header" style="margin-bottom:1.2rem;">
+                <div class="section-title" style="font-size:1.2rem;">
+                  <span>COMMUNICATION NODES</span>
                 </div>
               </div>
-              <div style="display:flex; flex-direction:column; gap:10px;" id="home-socials-list">
+              <div style="display:flex; flex-direction:column; gap:0.6rem;" id="home-socials-list">
                 <!-- Dynamically populated -->
               </div>
             </div>
@@ -249,309 +225,372 @@
           </div>
         </div>
 
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= 2. MY PROFILE SECTION ================= -->
-      <section class="cyber-section" id="section-profile">
+    <!-- ================= 2. MY PROFILE SECTION ================= -->
+    <section class="section-block" id="section-profile">
+      <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title text-gradient">IDENTITY MATRIX</h2>
-            <div class="section-subtitle">Manage personal identifiers, cyber credentials, and biography</div>
+            <h2 class="section-title gradient-text">IDENTITY MATRIX</h2>
+            <div class="section-subtitle">Personal credentials, biography, and platform identifiers</div>
           </div>
-          <button class="cyber-btn" id="btn-open-edit-profile">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
-            EDIT CREDENTIALS
+          <button class="btn btn-primary" id="btn-open-edit-profile">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+            <span>Edit Credentials</span>
           </button>
         </div>
 
-        <div class="cyber-card" style="padding:28px; margin-bottom:24px;">
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+        <div class="glass-card" style="margin-bottom:2rem;">
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.8rem;">
             <div>
-              <span class="setting-desc">FULL NAME</span>
-              <div style="font-size:1.3rem; font-weight:700; margin-top:4px;" id="profile-view-name">Alex Vance</div>
+              <span class="metric-label">Full Name</span>
+              <div style="font-size:1.4rem; font-weight:700; margin-top:0.3rem;" id="profile-view-name">PIYUSH</div>
             </div>
             <div>
-              <span class="setting-desc">HANDLE / USERNAME</span>
-              <div style="font-size:1.3rem; font-weight:700; color:var(--accent-primary); margin-top:4px;" id="profile-view-handle">@cyber_alex</div>
+              <span class="metric-label">Handle / Identity</span>
+              <div style="font-size:1.4rem; font-weight:700; color:var(--accent-primary); margin-top:0.3rem;" id="profile-view-handle">@cyber_piyush</div>
             </div>
             <div>
-              <span class="setting-desc">PROFESSION</span>
-              <div style="font-size:1.1rem; font-weight:600; margin-top:4px;" id="profile-view-profession">Cyber Systems Architect</div>
+              <span class="metric-label">Profession</span>
+              <div style="font-size:1.15rem; font-weight:600; margin-top:0.3rem;" id="profile-view-profession">Cyber Systems Architect</div>
             </div>
             <div>
-              <span class="setting-desc">LOCATION</span>
-              <div style="font-size:1.1rem; font-weight:600; margin-top:4px;" id="profile-view-location">Neo Tokyo / Sector 7</div>
+              <span class="metric-label">Base Location</span>
+              <div style="font-size:1.15rem; font-weight:600; margin-top:0.3rem;" id="profile-view-location">Neo Tokyo / Sector 7</div>
             </div>
           </div>
-          <div style="margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.06);">
-            <span class="setting-desc">BIOGRAPHY</span>
-            <p style="margin-top:8px; line-height:1.6; font-size:1.05rem;" id="profile-view-bio">
+          <div style="margin-top:1.8rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06);">
+            <span class="metric-label">Biography & Overview</span>
+            <p style="margin-top:0.6rem; line-height:1.7; font-size:1.05rem;" id="profile-view-bio">
               Architecting resilient cyber platforms, Web Audio synthesizers, and neon visualizers. Specializing in high-performance frontend interfaces with zero-external-dependency footprints.
             </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= 3. ABOUT ME SECTION ================= -->
-      <section class="cyber-section" id="section-about">
+    <!-- ================= 3. ABOUT ME SECTION ================= -->
+    <section class="section-block" id="section-about">
+      <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title text-gradient">ABOUT THE OPERATOR</h2>
-            <div class="section-subtitle">Chronicles, tech philosophy, and mission parameters</div>
+            <h2 class="section-title gradient-text">ABOUT THE OPERATOR</h2>
+            <div class="section-subtitle">Chronicles, technical philosophy, and mission parameters</div>
           </div>
         </div>
 
-        <div style="display:grid; grid-template-columns: 2fr 1fr; gap:24px;">
-          <div class="cyber-card" style="padding:28px;">
-            <h3 class="cyber-font" style="margin-bottom:14px; color:var(--accent-primary);">THE BACKSTORY</h3>
-            <p style="color:var(--text-muted); line-height:1.8; margin-bottom:16px;">
-              Born in the silicon-lit backstreets of the web development renaissance, I explore the intersections of modern browser standards, vanilla JavaScript optimization, and futuristic neon aesthetics. 
+        <div class="grid-2">
+          <div class="glass-card">
+            <h3 class="cyber-font" style="margin-bottom:1rem; color:var(--accent-primary);">THE CHRONICLES</h3>
+            <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.2rem;">
+              Born in the silicon-lit backstreets of the web development renaissance, I explore the intersections of modern browser standards, vanilla JavaScript optimization, and futuristic neon aesthetics.
             </p>
-            <p style="color:var(--text-muted); line-height:1.8; margin-bottom:24px;">
+            <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.8rem;">
               My philosophy: true speed and resilience come from mastering foundational web APIs—HTML5 Audio, Canvas, IndexedDB, and CSS hardware-accelerated transforms—without the bloat of multi-megabyte frameworks.
             </p>
 
-            <h3 class="cyber-font" style="margin-bottom:14px; color:var(--neon-pink);">TIMELINE & MILESTONES</h3>
-            <div style="display:flex; flex-direction:column; gap:16px; border-left:2px solid var(--accent-primary); padding-left:18px;">
+            <h3 class="cyber-font" style="margin-bottom:1.2rem; color:var(--pink-accent);">TIMELINE & MILESTONES</h3>
+            <div style="display:flex; flex-direction:column; gap:1.4rem; border-left:2px solid var(--accent-primary); padding-left:1.5rem;">
               <div>
                 <div class="cyber-font" style="color:var(--accent-primary); font-size:0.85rem;">2026 - PRESENT</div>
-                <div style="font-weight:700;">Principal Cyber Systems Architect</div>
-                <div style="font-size:0.85rem; color:var(--text-muted);">Designing offline-first client dashboards and real-time audio visualization engines.</div>
+                <div style="font-weight:700; font-size:1.1rem;">Principal Cyber Systems Architect</div>
+                <div style="font-size:0.9rem; color:var(--text-muted);">Designing offline-first client dashboards and real-time audio visualization engines.</div>
               </div>
               <div>
-                <div class="cyber-font" style="color:var(--neon-pink); font-size:0.85rem;">2024 - 2026</div>
-                <div style="font-weight:700;">Senior Frontend Engineer</div>
-                <div style="font-size:0.85rem; color:var(--text-muted);">Constructed low-latency Web Audio suites and interactive data hubs.</div>
+                <div class="cyber-font" style="color:var(--blue-primary); font-size:0.85rem;">2024 - 2026</div>
+                <div style="font-weight:700; font-size:1.1rem;">Senior Frontend Engineer</div>
+                <div style="font-size:0.9rem; color:var(--text-muted);">Constructed low-latency Web Audio suites and interactive data hubs.</div>
               </div>
               <div>
-                <div class="cyber-font" style="color:var(--neon-purple); font-size:0.85rem;">2022 - 2024</div>
-                <div style="font-weight:700;">UI/UX Cyberpunk Specialist</div>
-                <div style="font-size:0.85rem; color:var(--text-muted);">Pioneered glowing glassmorphism design systems for high-tech dashboards.</div>
+                <div class="cyber-font" style="color:var(--purple-accent); font-size:0.85rem;">2022 - 2024</div>
+                <div style="font-weight:700; font-size:1.1rem;">UI/UX Cyberpunk Specialist</div>
+                <div style="font-size:0.9rem; color:var(--text-muted);">Pioneered glowing glassmorphism design systems for high-tech dashboards.</div>
               </div>
             </div>
           </div>
 
-          <div style="display:flex; flex-direction:column; gap:20px;">
-            <div class="cyber-card" style="padding:22px;">
-              <h4 class="cyber-font" style="margin-bottom:12px; color:var(--accent-primary);">OPERATIONAL DIRECTIVES</h4>
-              <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:0.9rem; color:var(--text-muted);">
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            <div class="glass-card">
+              <h4 class="cyber-font" style="margin-bottom:1rem; color:var(--accent-primary);">OPERATIONAL DIRECTIVES</h4>
+              <ul style="list-style:none; display:flex; flex-direction:column; gap:0.8rem; font-size:0.95rem; color:var(--text-muted);">
                 <li>⚡ 100% Zero Frameworks Overhead</li>
-                <li>🔒 Privacy-First Local Persistence</li>
+                <li>🔒 Privacy-First Local Persistence (IndexedDB)</li>
                 <li>🎵 High-Fidelity Audio Synthesis</li>
-                <li>🚀 Responsive Across All Form Factors</li>
+                <li>🚀 Ultra-Responsive Across All Form Factors</li>
               </ul>
             </div>
 
-            <div class="cyber-card" style="padding:22px;">
-              <h4 class="cyber-font" style="margin-bottom:12px; color:var(--neon-pink);">INTERESTS</h4>
-              <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <div class="glass-card">
+              <h4 class="cyber-font" style="margin-bottom:1rem; color:var(--pink-accent);">CORE INTERESTS</h4>
+              <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
                 <span class="project-tag">SYNTHWAVE</span>
                 <span class="project-tag">CYBERNETICS</span>
                 <span class="project-tag">WEB AUDIO API</span>
                 <span class="project-tag">GLASSDESIGN</span>
                 <span class="project-tag">NEURAL NETS</span>
+                <span class="project-tag">INDEXEDDB</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= 4. MY SKILLS SECTION ================= -->
-      <section class="cyber-section" id="section-skills">
+    <!-- ================= 4. MY SKILLS SECTION ================= -->
+    <section class="section-block" id="section-skills">
+      <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title text-gradient">SKILL MATRIX</h2>
-            <div class="section-subtitle">Proficiency telemetry and tech competence</div>
+            <h2 class="section-title gradient-text">SKILL MATRIX</h2>
+            <div class="section-subtitle">Proficiency telemetry and technical competencies</div>
           </div>
-          <button class="cyber-btn" id="btn-add-skill">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-            ADD NEW SKILL
+          <button class="btn btn-primary" id="btn-add-skill">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            <span>Add Capability</span>
           </button>
         </div>
 
         <div class="skills-grid" id="full-skills-grid">
           <!-- Dynamically populated -->
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= 5. MY PROJECTS SECTION ================= -->
-      <section class="cyber-section" id="section-projects">
+    <!-- ================= 5. MY PROJECTS SECTION ================= -->
+    <section class="section-block" id="section-projects">
+      <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title text-gradient">PROJECT ARCHIVE</h2>
-            <div class="section-subtitle">Deployments, open-source repositories, and digital prototypes</div>
+            <h2 class="section-title gradient-text">PROJECT ARCHIVE</h2>
+            <div class="section-subtitle">Live deployments, repositories, and digital prototypes</div>
           </div>
-          <button class="cyber-btn" id="btn-add-project">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-            ADD NEW PROJECT
+          <button class="btn btn-primary" id="btn-add-project">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            <span>Add Project</span>
           </button>
         </div>
 
         <div class="projects-grid" id="full-projects-grid">
           <!-- Dynamically populated -->
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= 6. GALLERY SECTION ================= -->
-      <section class="cyber-section" id="section-gallery">
+    <!-- ================= 6. GALLERY SECTION ================= -->
+    <section class="section-block" id="section-gallery">
+      <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title text-gradient">CYBER GALLERY</h2>
-            <div class="section-subtitle">Holographic captures saved securely to local IndexedDB</div>
+            <h2 class="section-title gradient-text">CYBER GALLERY</h2>
+            <div class="section-subtitle">Holographic captures stored securely in browser IndexedDB</div>
           </div>
-          <button class="cyber-btn" id="btn-upload-photo">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
-            UPLOAD PHOTO
+          <button class="btn btn-primary" id="btn-upload-photo">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Upload Photo</span>
           </button>
         </div>
 
         <div class="gallery-grid" id="full-gallery-grid">
           <!-- Dynamically populated from IndexedDB -->
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= 7. MUSIC SECTION ================= -->
-      <section class="cyber-section" id="section-music">
+    <!-- ================= 7. MUSIC SECTION ================= -->
+    <section class="section-block" id="section-music">
+      <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title text-gradient">FAVOURITE MUSIC</h2>
-            <div class="section-subtitle">High-energy cyberpunk soundscapes and personal audio archive</div>
+            <h2 class="section-title gradient-text">FAVOURITE MUSIC</h2>
+            <div class="section-subtitle">Personal cyberpunk audio vault & synthesizer playback</div>
           </div>
-          <a href="music.html" class="cyber-btn btn-pink">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
-            LAUNCH FULL MUSIC PLAYER
+          <a href="music.html" class="btn btn-pink">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span>Launch Full Music Player</span>
           </a>
         </div>
 
-        <div class="cyber-card" style="padding:28px;">
-          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:12px;">
+        <div class="glass-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
             <div>
-              <h3 class="cyber-font text-gradient">AUDIO REPOSITORY</h3>
-              <p class="setting-desc">Listen in mini player or expand to the dedicated fullscreen visualizer page</p>
+              <h3 class="cyber-font text-cyan">AUDIO ARCHIVE</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">Listen with the fixed mini player or open the dedicated visualizer</p>
             </div>
-            <button class="cyber-btn btn-sm" id="section-music-add-btn">UPLOAD NEW MP3</button>
+            <button class="btn btn-sm btn-nav" id="section-music-add-btn">Upload MP3 / Audio</button>
           </div>
 
-          <div class="playlist-items-container" id="section-music-playlist" style="max-height:400px; overflow-y:auto;">
+          <div style="display:flex; flex-direction:column; gap:0.6rem;" id="section-music-playlist">
             <!-- Dynamically populated -->
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= 8. SOCIAL LINKS SECTION ================= -->
-      <section class="cyber-section" id="section-socials">
+    <!-- ================= 8. SOCIAL LINKS SECTION ================= -->
+    <section class="section-block" id="section-socials">
+      <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title text-gradient">SOCIAL NETWORK NODES</h2>
-            <div class="section-subtitle">Manage communication vectors and public endpoints</div>
+            <h2 class="section-title gradient-text">COMMUNICATION NODES</h2>
+            <div class="section-subtitle">Direct endpoints across social networks and repositories</div>
           </div>
-          <button class="cyber-btn" id="btn-edit-socials">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
-            CONFIGURE LINKS
+          <button class="btn btn-primary" id="btn-edit-socials">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+            <span>Configure Links</span>
           </button>
         </div>
 
         <div class="socials-grid" id="full-socials-grid">
           <!-- Dynamically populated -->
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= 9. SETTINGS SECTION ================= -->
-      <section class="cyber-section" id="section-settings">
+    <!-- ================= 9. SETTINGS SECTION ================= -->
+    <section class="section-block" id="section-settings">
+      <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title text-gradient">SYSTEM CONFIGURATION</h2>
-            <div class="section-subtitle">Personalize visuals, animations, audio parameters, and local data backups</div>
+            <h2 class="section-title gradient-text">SYSTEM PREFERENCES</h2>
+            <div class="section-subtitle">Theme color presets, visual overlays, and data backup operations</div>
           </div>
         </div>
 
-        <div class="settings-container">
+        <div style="display:flex; flex-direction:column; gap:1.5rem; max-width:800px; margin:0 auto;">
           
-          <!-- Theme Customization -->
-          <div class="cyber-card settings-card">
-            <h3 class="cyber-font" style="margin-bottom:16px; color:var(--accent-primary);">NEON ACCENT PALETTE</h3>
-            <div class="setting-row">
-              <div class="setting-info">
-                <span class="setting-title">Primary Color Mode</span>
-                <span class="setting-desc">Select your preferred glowing cyberpunk frequency</span>
+          <div class="glass-card">
+            <h3 class="cyber-font" style="margin-bottom:1.2rem; color:var(--accent-primary);">NEON COLOR PALETTE</h3>
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <div style="font-weight:700;">Primary Accent Theme</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Calibrate your futuristic frequency</div>
               </div>
-              <div class="palette-picker" id="palette-picker">
-                <button class="palette-btn active" style="background:#00f3ff;" data-theme="cyan" title="Electric Cyan"></button>
-                <button class="palette-btn" style="background:#ff007f;" data-theme="pink" title="Neon Magenta"></button>
-                <button class="palette-btn" style="background:#9d00ff;" data-theme="purple" title="Hyper Violet"></button>
-                <button class="palette-btn" style="background:#00ff66;" data-theme="green" title="Toxic Matrix"></button>
-                <button class="palette-btn" style="background:#ffe600;" data-theme="yellow" title="Solar Flare"></button>
+              <div style="display:flex; gap:0.8rem;" id="palette-picker">
+                <button class="btn btn-sm active" style="background:#00f2fe; color:#050a14;" data-theme="cyan">Cyan</button>
+                <button class="btn btn-sm" style="background:#ff007f; color:#fff;" data-theme="pink">Pink</button>
+                <button class="btn btn-sm" style="background:#9d00ff; color:#fff;" data-theme="purple">Purple</button>
+                <button class="btn btn-sm" style="background:#00ff66; color:#050a14;" data-theme="green">Matrix</button>
+                <button class="btn btn-sm" style="background:#ffe600; color:#050a14;" data-theme="yellow">Solar</button>
               </div>
             </div>
           </div>
 
-          <!-- Visual & Audio Preferences -->
-          <div class="cyber-card settings-card">
-            <h3 class="cyber-font" style="margin-bottom:16px; color:var(--accent-primary);">PREFERENCES</h3>
-            <div class="setting-row">
-              <div class="setting-info">
-                <span class="setting-title">Scanline Visual FX</span>
-                <span class="setting-desc">CRT retro monitor scanline overlay</span>
+          <div class="glass-card">
+            <h3 class="cyber-font" style="margin-bottom:1.2rem; color:var(--accent-primary);">VISUAL OVERLAYS</h3>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0; border-bottom:1px solid rgba(255,255,255,0.06);">
+              <div>
+                <div style="font-weight:700;">Scanline Monitor FX</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">CRT retro monitor scanline simulation</div>
               </div>
-              <label class="switch">
-                <input type="checkbox" id="setting-scanlines" checked>
-                <span class="slider"></span>
-              </label>
+              <input type="checkbox" id="setting-scanlines" checked style="width:20px; height:20px; cursor:pointer;">
             </div>
-            <div class="setting-row">
-              <div class="setting-info">
-                <span class="setting-title">UI Ambient Animations</span>
-                <span class="setting-desc">Glowing neon borders and rotating profile rings</span>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0;">
+              <div>
+                <div style="font-weight:700;">Ambient Animations</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Glowing rings & transition animations</div>
               </div>
-              <label class="switch">
-                <input type="checkbox" id="setting-animations" checked>
-                <span class="slider"></span>
-              </label>
+              <input type="checkbox" id="setting-animations" checked style="width:20px; height:20px; cursor:pointer;">
             </div>
           </div>
 
-          <!-- Data Management -->
-          <div class="cyber-card settings-card">
-            <h3 class="cyber-font" style="margin-bottom:16px; color:var(--accent-primary);">DATA PERSISTENCE & BACKUPS</h3>
-            <div class="setting-row">
-              <div class="setting-info">
-                <span class="setting-title">Export Profile Configuration</span>
-                <span class="setting-desc">Download all profile data, skills, and projects as a JSON file</span>
+          <div class="glass-card">
+            <h3 class="cyber-font" style="margin-bottom:1.2rem; color:var(--accent-primary);">DATA PERSISTENCE</h3>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0; border-bottom:1px solid rgba(255,255,255,0.06); flex-wrap:wrap; gap:1rem;">
+              <div>
+                <div style="font-weight:700;">Export JSON Profile Backup</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Download your profile, skills, projects, and playlist</div>
               </div>
-              <button class="cyber-btn btn-sm" id="btn-export-data">EXPORT JSON</button>
+              <button class="btn btn-sm btn-nav" id="btn-export-data">Export JSON</button>
             </div>
-            <div class="setting-row">
-              <div class="setting-info">
-                <span class="setting-title">Import Profile Data</span>
-                <span class="setting-desc">Restore settings and content from an existing JSON backup</span>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0; border-bottom:1px solid rgba(255,255,255,0.06); flex-wrap:wrap; gap:1rem;">
+              <div>
+                <div style="font-weight:700;">Import Profile Backup</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Restore credentials from JSON file</div>
               </div>
-              <label class="cyber-btn btn-sm btn-ghost" style="cursor:pointer;">
-                IMPORT JSON
+              <label class="btn btn-sm btn-ghost" style="cursor:pointer;">
+                Import JSON
                 <input type="file" id="import-json-file" accept=".json" style="display:none;">
               </label>
             </div>
-            <div class="setting-row" style="border-top:1px solid rgba(255,0,85,0.3); margin-top:12px; padding-top:18px;">
-              <div class="setting-info">
-                <span class="setting-title" style="color:var(--neon-pink);">Danger Zone // Factory Reset</span>
-                <span class="setting-desc">Clear all LocalStorage & IndexedDB items and restore initial defaults</span>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <div style="font-weight:700; color:var(--pink-accent);">Factory Reset Data</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Clear LocalStorage & IndexedDB items</div>
               </div>
-              <button class="cyber-btn btn-sm btn-pink" id="btn-reset-data">RESET ALL DATA</button>
+              <button class="btn btn-sm btn-pink" id="btn-reset-data">Reset All</button>
             </div>
           </div>
 
         </div>
-      </section>
+      </div>
+    </section>
 
-    </main>
-  </div>
+  </main>
 
-  <!-- ================= UNIVERSAL BOTTOM MINI MUSIC PLAYER ================= -->
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="brand-logo footer-logo" style="margin-bottom:1rem;">
+          <div class="logo-icon">
+            <span class="logo-core"></span>
+            <span class="logo-ring"></span>
+          </div>
+          <span class="logo-text">PIYUSH <span class="text-cyan">Profile</span></span>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">
+          Next-generation cyber personal profile dashboard. Designed, developed, and owned by <strong>PIYUSH</strong>.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a data-section="home" style="cursor:pointer;">Home</a></li>
+          <li><a data-section="profile" style="cursor:pointer;">My Profile</a></li>
+          <li><a data-section="projects" style="cursor:pointer;">Projects</a></li>
+          <li><a data-section="skills" style="cursor:pointer;">Skills Matrix</a></li>
+          <li><a href="music.html">Music Player</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Creator &amp; Owner</h4>
+        <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.6;">
+          Crafted with passion by <strong>PIYUSH</strong>. Powered by pure HTML5, CSS3, Vanilla JS, Web Audio API, and IndexedDB.
+        </p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 PIYUSH Cyber Profile &bull; All Rights Reserved.</p>
+      <div>Responsive for Mobile &bull; Tablet &bull; Desktop</div>
+    </div>
+  </footer>
+
+  <!-- ================= FIXED BOTTOM MINI MUSIC PLAYER ================= -->
   <footer class="mini-player-bar" id="mini-player">
     <div class="mini-track-info">
       <img src="assets/images/default-album.svg" alt="Album Art" class="mini-album-art" id="mini-cover">
-      <div class="mini-track-details">
-        <span class="mini-track-title" id="mini-title">Neon Cyber Dream</span>
-        <span class="mini-track-artist" id="mini-artist">SynthWave Matrix</span>
+      <div>
+        <div class="mini-track-title" id="mini-title">Neon Cyber Dream</div>
+        <div class="mini-track-artist" id="mini-artist">SynthWave Matrix</div>
       </div>
     </div>
 
@@ -582,9 +621,7 @@
         <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
       </svg>
       <input type="range" class="volume-slider" id="mini-volume" min="0" max="1" step="0.01" value="0.8">
-      <a href="music.html" class="cyber-btn btn-sm btn-ghost" title="Launch Dedicated Fullscreen Player">
-        FULL PLAYER
-      </a>
+      <a href="music.html" class="btn btn-sm btn-nav">FULL PLAYER</a>
     </div>
   </footer>
 
@@ -592,9 +629,9 @@
 
   <!-- 1. Edit Profile Modal -->
   <div class="cyber-modal-overlay" id="modal-edit-profile">
-    <div class="cyber-card cyber-modal">
+    <div class="cyber-modal">
       <div class="modal-header">
-        <h3 class="cyber-font text-gradient">EDIT CYBER CREDENTIALS</h3>
+        <h3 class="cyber-font text-cyan">EDIT PROFILE CREDENTIALS</h3>
         <button class="modal-close-btn" data-close="modal-edit-profile">&times;</button>
       </div>
       <form id="form-edit-profile">
@@ -615,7 +652,7 @@
           <input type="text" id="input-prof-location" class="form-input">
         </div>
         <div class="form-group">
-          <label class="form-label">SHORT BIOGRAPHY</label>
+          <label class="form-label">BIOGRAPHY</label>
           <textarea id="input-prof-bio" class="form-textarea"></textarea>
         </div>
         <div class="form-group">
@@ -623,12 +660,12 @@
           <input type="file" id="input-prof-avatar-file" accept="image/*" class="form-input">
         </div>
         <div class="form-group">
-          <label class="form-label">CHANGE BANNER COVER IMAGE</label>
+          <label class="form-label">CHANGE BANNER COVER</label>
           <input type="file" id="input-prof-cover-file" accept="image/*" class="form-input">
         </div>
         <div class="form-actions">
-          <button type="button" class="cyber-btn btn-ghost" data-close="modal-edit-profile">CANCEL</button>
-          <button type="submit" class="cyber-btn">SAVE CREDENTIALS</button>
+          <button type="button" class="btn btn-ghost" data-close="modal-edit-profile">CANCEL</button>
+          <button type="submit" class="btn btn-primary">SAVE CREDENTIALS</button>
         </div>
       </form>
     </div>
@@ -636,9 +673,9 @@
 
   <!-- 2. Add / Edit Skill Modal -->
   <div class="cyber-modal-overlay" id="modal-skill">
-    <div class="cyber-card cyber-modal">
+    <div class="cyber-modal">
       <div class="modal-header">
-        <h3 class="cyber-font text-gradient" id="modal-skill-title">ADD CAPABILITY</h3>
+        <h3 class="cyber-font text-cyan" id="modal-skill-title">ADD CAPABILITY</h3>
         <button class="modal-close-btn" data-close="modal-skill">&times;</button>
       </div>
       <form id="form-skill">
@@ -649,20 +686,20 @@
         </div>
         <div class="form-group">
           <label class="form-label">MASTERY PERCENTAGE (0 - 100) *</label>
-          <input type="number" id="input-skill-pct" class="form-input" min="1" max="100" value="85" required>
+          <input type="number" id="input-skill-pct" class="form-input" min="1" max="100" value="90" required>
         </div>
         <div class="form-group">
           <label class="form-label">CATEGORY</label>
           <select id="input-skill-cat" class="form-select">
             <option value="Frontend">Frontend Interface</option>
             <option value="Backend">Core Architecture</option>
-            <option value="Cyber">Security & Audio</option>
-            <option value="Tools">Tools & Dev</option>
+            <option value="Cyber">Cyber Security & Audio</option>
+            <option value="Tools">Development & Tools</option>
           </select>
         </div>
         <div class="form-actions">
-          <button type="button" class="cyber-btn btn-ghost" data-close="modal-skill">CANCEL</button>
-          <button type="submit" class="cyber-btn">COMMIT SKILL</button>
+          <button type="button" class="btn btn-ghost" data-close="modal-skill">CANCEL</button>
+          <button type="submit" class="btn btn-primary">COMMIT SKILL</button>
         </div>
       </form>
     </div>
@@ -670,20 +707,20 @@
 
   <!-- 3. Add / Edit Project Modal -->
   <div class="cyber-modal-overlay" id="modal-project">
-    <div class="cyber-card cyber-modal">
+    <div class="cyber-modal">
       <div class="modal-header">
-        <h3 class="cyber-font text-gradient" id="modal-project-title">ADD CYBER PROJECT</h3>
+        <h3 class="cyber-font text-cyan" id="modal-project-title">ADD PROJECT</h3>
         <button class="modal-close-btn" data-close="modal-project">&times;</button>
       </div>
       <form id="form-project">
         <input type="hidden" id="input-proj-id">
         <div class="form-group">
           <label class="form-label">PROJECT TITLE *</label>
-          <input type="text" id="input-proj-title" class="form-input" placeholder="e.g. Neural Spectrum HUD" required>
+          <input type="text" id="input-proj-title" class="form-input" required>
         </div>
         <div class="form-group">
           <label class="form-label">DESCRIPTION *</label>
-          <textarea id="input-proj-desc" class="form-textarea" placeholder="Detailed project overview..." required></textarea>
+          <textarea id="input-proj-desc" class="form-textarea" required></textarea>
         </div>
         <div class="form-group">
           <label class="form-label">TECHNOLOGIES (Comma separated)</label>
@@ -698,12 +735,12 @@
           <input type="text" id="input-proj-github" class="form-input" placeholder="https://github.com/...">
         </div>
         <div class="form-group">
-          <label class="form-label">PROJECT SCREENSHOT / COVER</label>
+          <label class="form-label">PROJECT SCREENSHOT</label>
           <input type="file" id="input-proj-img-file" accept="image/*" class="form-input">
         </div>
         <div class="form-actions">
-          <button type="button" class="cyber-btn btn-ghost" data-close="modal-project">CANCEL</button>
-          <button type="submit" class="cyber-btn">DEPLOY PROJECT</button>
+          <button type="button" class="btn btn-ghost" data-close="modal-project">CANCEL</button>
+          <button type="submit" class="btn btn-primary">DEPLOY PROJECT</button>
         </div>
       </form>
     </div>
@@ -711,23 +748,23 @@
 
   <!-- 4. Upload Gallery Photo Modal -->
   <div class="cyber-modal-overlay" id="modal-gallery">
-    <div class="cyber-card cyber-modal">
+    <div class="cyber-modal">
       <div class="modal-header">
-        <h3 class="cyber-font text-gradient">UPLOAD TO GALLERY</h3>
+        <h3 class="cyber-font text-cyan">STORE TO GALLERY</h3>
         <button class="modal-close-btn" data-close="modal-gallery">&times;</button>
       </div>
       <form id="form-gallery">
         <div class="form-group">
-          <label class="form-label">IMAGE FILE (Saved to IndexedDB) *</label>
+          <label class="form-label">IMAGE FILE (IndexedDB Stored) *</label>
           <input type="file" id="input-gallery-file" accept="image/*" class="form-input" required>
         </div>
         <div class="form-group">
           <label class="form-label">CAPTION / TITLE</label>
-          <input type="text" id="input-gallery-title" class="form-input" placeholder="e.g. Night Neon Alley">
+          <input type="text" id="input-gallery-title" class="form-input" placeholder="e.g. Neo Night Alley">
         </div>
         <div class="form-actions">
-          <button type="button" class="cyber-btn btn-ghost" data-close="modal-gallery">CANCEL</button>
-          <button type="submit" class="cyber-btn">STORE IN DB</button>
+          <button type="button" class="btn btn-ghost" data-close="modal-gallery">CANCEL</button>
+          <button type="submit" class="btn btn-primary">SAVE TO DB</button>
         </div>
       </form>
     </div>
@@ -735,9 +772,9 @@
 
   <!-- 5. Edit Social Links Modal -->
   <div class="cyber-modal-overlay" id="modal-socials">
-    <div class="cyber-card cyber-modal">
+    <div class="cyber-modal">
       <div class="modal-header">
-        <h3 class="cyber-font text-gradient">CONFIGURE SOCIAL NODES</h3>
+        <h3 class="cyber-font text-cyan">CONFIGURE SOCIAL NODES</h3>
         <button class="modal-close-btn" data-close="modal-socials">&times;</button>
       </div>
       <form id="form-socials">
@@ -766,8 +803,8 @@
           <input type="text" id="soc-x" class="form-input">
         </div>
         <div class="form-actions">
-          <button type="button" class="cyber-btn btn-ghost" data-close="modal-socials">CANCEL</button>
-          <button type="submit" class="cyber-btn">SAVE NODES</button>
+          <button type="button" class="btn btn-ghost" data-close="modal-socials">CANCEL</button>
+          <button type="submit" class="btn btn-primary">SAVE NODES</button>
         </div>
       </form>
     </div>
@@ -782,7 +819,7 @@
     </div>
   </div>
 
-  <!-- Storage Engine & Shared Scripts -->
+  <!-- Scripts -->
   <script src="db.js"></script>
   <script src="music.js"></script>
   <script src="script.js"></script>

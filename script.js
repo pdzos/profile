@@ -1,56 +1,56 @@
 /**
- * Neon Cyber Profile - Main Application Logic
+ * PIYUSH Cyber Profile - Modern Application Logic
  * Pure Vanilla JavaScript & LocalStorage / IndexedDB Integration
  */
 
 // ==========================================
-// Default State Data
+// Default Profile Data (Matching JARVIS Identity)
 // ==========================================
 const DEFAULT_PROFILE = {
-  name: 'Alex Vance',
-  handle: '@cyber_alex',
-  profession: 'Cyber Systems Architect',
+  name: 'PIYUSH',
+  handle: '@cyber_piyush',
+  profession: 'Full-Stack Cyber Architect & Audio Engineer',
   location: 'Neo Tokyo / Sector 7',
-  bio: 'Building next-generation holographic interfaces and web audio systems. Cyberpunk enthusiast & full-stack architect.',
+  bio: 'Architecting next-generation cyber platforms, holographic interfaces, and low-latency audio synthesizers. Creator of JARVIS Assistant for Android & Windows PC.',
   avatarUrl: 'assets/images/default-avatar.svg',
   coverUrl: 'assets/images/default-cover.svg'
 };
 
 const DEFAULT_SKILLS = [
   { id: 's1', name: 'Vanilla JavaScript (ES6+)', pct: 98, cat: 'Frontend' },
-  { id: 's2', name: 'Web Audio API & Synthesizers', pct: 92, cat: 'Cyber' },
-  { id: 's3', name: 'IndexedDB & Offline Engines', pct: 90, cat: 'Backend' },
-  { id: 's4', name: 'HTML5 Canvas & Visualizers', pct: 88, cat: 'Frontend' },
-  { id: 's5', name: 'CSS3 Neon Glassmorphism', pct: 96, cat: 'Frontend' },
-  { id: 's6', name: 'Cyberpunk Security Protocols', pct: 84, cat: 'Cyber' }
+  { id: 's2', name: 'Web Audio API & Synthesizers', pct: 94, cat: 'Cyber' },
+  { id: 's3', name: 'IndexedDB & Offline Engines', pct: 92, cat: 'Backend' },
+  { id: 's4', name: 'HTML5 Canvas & Visualizers', pct: 90, cat: 'Frontend' },
+  { id: 's5', name: 'Modern CSS3 Glassmorphism', pct: 96, cat: 'Frontend' },
+  { id: 's6', name: 'Android Kotlin & Python Core', pct: 88, cat: 'Cyber' }
 ];
 
 const DEFAULT_PROJECTS = [
   {
     id: 'p1',
-    title: 'Neon Matrix Audio Visualizer',
-    desc: 'Hardware-accelerated Web Audio spectrum visualizer with real-time frequency analysis and holographic vinyl rotation.',
-    tags: 'Vanilla JS, Web Audio API, Canvas 2D',
-    demo: 'music.html',
-    github: 'https://github.com',
+    title: 'JARVIS Assistant (Android & PC)',
+    desc: 'Iron Man-grade digital assistant powered by Kotlin, Python, Google Gemini Live, and Vosk offline wake word engine.',
+    tags: 'Kotlin, Python, Gemini Live, Vosk Engine',
+    demo: 'download.html',
+    github: 'https://github.com/pdzos',
     image: 'assets/images/default-cover.svg'
   },
   {
     id: 'p2',
-    title: 'Cyberpunk OS Dashboard',
-    desc: 'Offline-first personal dashboard with zero-backend IndexedDB persistence and scanline CRT overlays.',
-    tags: 'HTML5, CSS Grid, LocalStorage, IndexedDB',
-    demo: '#',
-    github: 'https://github.com',
+    title: 'Neon Cyber Audio Visualizer',
+    desc: 'Hardware-accelerated Web Audio spectrum visualizer with real-time frequency analysis and rotating holographic vinyl.',
+    tags: 'Web Audio API, Canvas 2D, Pure Vanilla JS',
+    demo: 'music.html',
+    github: 'https://github.com/pdzos/profile',
     image: 'assets/images/default-album.svg'
   },
   {
     id: 'p3',
-    title: 'Quantum Crypt Node HUD',
-    desc: 'Futuristic telemetry interface with glowing reactive charts, dynamic HUD gauges and sound synthesizer feedback.',
-    tags: 'JavaScript, CSS Animations, SVG HUD',
-    demo: '#',
-    github: 'https://github.com',
+    title: 'Quantum Crypt Personal Dashboard',
+    desc: 'Offline-first personal telemetry HUD with IndexedDB persistence, CRT scanline simulation, and neon glass design.',
+    tags: 'HTML5, CSS3 Grid, LocalStorage, IndexedDB',
+    demo: 'index.html',
+    github: 'https://github.com/pdzos/profile',
     image: 'assets/images/default-cover.svg'
   }
 ];
@@ -59,7 +59,7 @@ const DEFAULT_SOCIALS = [
   { id: 'youtube', name: 'YouTube', url: 'https://youtube.com', icon: '▶' },
   { id: 'instagram', name: 'Instagram', url: 'https://instagram.com', icon: '📷' },
   { id: 'telegram', name: 'Telegram', url: 'https://telegram.org', icon: '✈' },
-  { id: 'github', name: 'GitHub', url: 'https://github.com', icon: '🐙' },
+  { id: 'github', name: 'GitHub', url: 'https://github.com/pdzos', icon: '🐙' },
   { id: 'discord', name: 'Discord', url: 'https://discord.com', icon: '💬' },
   { id: 'x', name: 'X (Twitter)', url: 'https://x.com', icon: '✖' }
 ];
@@ -137,7 +137,6 @@ class CyberApp {
   }
 
   renderProfile() {
-    // Hero profile elements
     const heroName = document.getElementById('hero-name');
     const heroHandle = document.getElementById('hero-handle');
     const heroBio = document.getElementById('hero-bio');
@@ -150,16 +149,6 @@ class CyberApp {
     if (heroAvatar) heroAvatar.src = this.profile.avatarUrl;
     if (heroCover) heroCover.src = this.profile.coverUrl;
 
-    // Sidebar quick user info
-    const sideName = document.getElementById('sidebar-name');
-    const sideHandle = document.getElementById('sidebar-handle');
-    const sideAvatar = document.getElementById('sidebar-avatar');
-
-    if (sideName) sideName.textContent = this.profile.name;
-    if (sideHandle) sideHandle.textContent = this.profile.handle;
-    if (sideAvatar) sideAvatar.src = this.profile.avatarUrl;
-
-    // Profile page details
     const pName = document.getElementById('profile-view-name');
     const pHandle = document.getElementById('profile-view-handle');
     const pProf = document.getElementById('profile-view-profession');
@@ -181,12 +170,6 @@ class CyberApp {
     if (statProj) statProj.textContent = this.projects.length;
     if (statSkills) statSkills.textContent = this.skills.length;
     if (statMusic && window.cyberMusic) statMusic.textContent = window.cyberMusic.playlist.length;
-
-    // Update nav badges
-    const bSkills = document.getElementById('nav-skills-badge');
-    const bProj = document.getElementById('nav-projects-badge');
-    if (bSkills) bSkills.textContent = this.skills.length;
-    if (bProj) bProj.textContent = this.projects.length;
   }
 
   renderSkills() {
@@ -194,21 +177,18 @@ class CyberApp {
     const homePreview = document.getElementById('home-skills-preview');
 
     const createSkillHTML = (s, isFull = false) => `
-      <div class="cyber-card skill-card">
+      <div class="skill-card">
         <div class="skill-header">
-          <div class="skill-info-left">
-            <div class="skill-icon-box">⚡</div>
-            <div class="skill-name">${s.name}</div>
-          </div>
+          <div class="skill-name">${s.name}</div>
           <div class="skill-pct">${s.pct}%</div>
         </div>
         <div class="skill-bar-track">
           <div class="skill-bar-fill" style="width: ${s.pct}%;"></div>
         </div>
         ${isFull ? `
-          <div class="skill-card-actions">
-            <button class="cyber-btn btn-sm btn-ghost edit-skill-btn" data-id="${s.id}">EDIT</button>
-            <button class="cyber-btn btn-sm btn-pink del-skill-btn" data-id="${s.id}">DELETE</button>
+          <div class="skill-actions">
+            <button class="btn btn-sm btn-ghost edit-skill-btn" data-id="${s.id}">Edit</button>
+            <button class="btn btn-sm btn-pink del-skill-btn" data-id="${s.id}">Delete</button>
           </div>
         ` : ''}
       </div>
@@ -216,7 +196,6 @@ class CyberApp {
 
     if (fullGrid) {
       fullGrid.innerHTML = this.skills.map(s => createSkillHTML(s, true)).join('');
-      // Bind Edit & Delete buttons
       fullGrid.querySelectorAll('.edit-skill-btn').forEach(btn => {
         btn.addEventListener('click', () => this.openEditSkill(btn.getAttribute('data-id')));
       });
@@ -235,25 +214,23 @@ class CyberApp {
     const homePreview = document.getElementById('home-featured-projects');
 
     const createProjectHTML = (p, isFull = false) => `
-      <div class="cyber-card project-card">
-        <div class="project-thumb-wrap">
-          <img src="${p.image || 'assets/images/default-cover.svg'}" alt="${p.title}" class="project-thumb-img">
-        </div>
+      <div class="project-card">
+        <img src="${p.image || 'assets/images/default-cover.svg'}" alt="${p.title}" class="project-thumb">
         <div class="project-body">
-          <h3 class="project-title text-gradient">${p.title}</h3>
+          <h3 class="project-title gradient-text">${p.title}</h3>
           <p class="project-desc">${p.desc}</p>
           <div class="project-tags">
             ${(p.tags || '').split(',').map(tag => `<span class="project-tag">${tag.trim()}</span>`).join('')}
           </div>
           <div class="project-footer">
-            <div class="project-links">
-              ${p.demo ? `<a href="${p.demo}" class="cyber-btn btn-sm" target="_blank">DEMO</a>` : ''}
-              ${p.github ? `<a href="${p.github}" class="cyber-btn btn-sm btn-ghost" target="_blank">CODE</a>` : ''}
+            <div style="display:flex; gap:0.5rem;">
+              ${p.demo ? `<a href="${p.demo}" class="btn btn-sm btn-primary">Demo</a>` : ''}
+              ${p.github ? `<a href="${p.github}" class="btn btn-sm btn-ghost" target="_blank">Code</a>` : ''}
             </div>
             ${isFull ? `
-              <div style="display:flex; gap:6px;">
-                <button class="cyber-btn btn-sm btn-ghost edit-proj-btn" data-id="${p.id}">EDIT</button>
-                <button class="cyber-btn btn-sm btn-pink del-proj-btn" data-id="${p.id}">DEL</button>
+              <div style="display:flex; gap:0.4rem;">
+                <button class="btn btn-sm btn-ghost edit-proj-btn" data-id="${p.id}">Edit</button>
+                <button class="btn btn-sm btn-pink del-proj-btn" data-id="${p.id}">Del</button>
               </div>
             ` : ''}
           </div>
@@ -278,13 +255,11 @@ class CyberApp {
 
   async renderGallery() {
     const grid = document.getElementById('full-gallery-grid');
-    const badge = document.getElementById('nav-gallery-badge');
     const stat = document.getElementById('stat-gallery-count');
     if (!grid || !window.cyberDB) return;
 
     try {
       const photos = await window.cyberDB.getAllGalleryImages();
-      if (badge) badge.textContent = photos.length;
       if (stat) stat.textContent = photos.length;
 
       if (photos.length === 0) {
@@ -308,13 +283,12 @@ class CyberApp {
               </svg>
             </button>
             <div class="gallery-overlay">
-              <span class="gallery-caption">${photo.title}</span>
+              <span style="font-weight:700;">${photo.title}</span>
             </div>
           </div>
         `;
       }).join('');
 
-      // Bind Gallery Click for Lightbox & Delete
       grid.querySelectorAll('.gallery-item').forEach(item => {
         item.addEventListener('click', (e) => {
           if (e.target.closest('.gallery-delete-btn')) {
@@ -340,11 +314,11 @@ class CyberApp {
     const homeList = document.getElementById('home-socials-list');
 
     const html = this.socials.map(s => `
-      <a href="${s.url}" target="_blank" class="cyber-card social-card">
+      <a href="${s.url}" target="_blank" class="social-card">
         <div class="social-icon">${s.icon}</div>
-        <div class="social-meta">
-          <div class="social-name">${s.name}</div>
-          <div class="social-url">${s.url}</div>
+        <div>
+          <div style="font-weight:700; font-size:1.1rem;">${s.name}</div>
+          <div style="font-size:0.82rem; color:var(--text-muted);">${s.url}</div>
         </div>
       </a>
     `).join('');
@@ -352,7 +326,7 @@ class CyberApp {
     if (fullGrid) fullGrid.innerHTML = html;
     if (homeList) {
       homeList.innerHTML = this.socials.slice(0, 3).map(s => `
-        <a href="${s.url}" target="_blank" class="cyber-btn btn-sm btn-ghost" style="justify-content:flex-start; gap:12px;">
+        <a href="${s.url}" target="_blank" class="btn btn-sm btn-ghost" style="justify-content:flex-start; gap:0.8rem;">
           <span>${s.icon}</span>
           <span>${s.name}</span>
         </a>
@@ -365,19 +339,21 @@ class CyberApp {
     if (!container || !window.cyberMusic) return;
 
     container.innerHTML = window.cyberMusic.playlist.map((track, idx) => `
-      <div class="playlist-track-row ${idx === window.cyberMusic.currentIndex ? 'active' : ''}" data-idx="${idx}">
-        <img class="track-row-art" src="${track.cover || 'assets/images/default-album.svg'}" alt="Cover">
-        <div class="track-row-info">
-          <div class="track-row-title">${track.title}</div>
-          <div class="track-row-artist">${track.artist}</div>
+      <div class="glass-card" style="display:flex; align-items:center; justify-content:space-between; padding:0.9rem 1.2rem; cursor:pointer;" data-idx="${idx}">
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <img src="${track.cover || 'assets/images/default-album.svg'}" alt="Cover" style="width:42px; height:42px; border-radius:6px; object-fit:cover;">
+          <div>
+            <div style="font-weight:700; font-size:0.95rem;">${track.title}</div>
+            <div style="font-size:0.8rem; color:var(--accent-primary);">${track.artist}</div>
+          </div>
         </div>
-        <button class="cyber-btn btn-sm ${idx === window.cyberMusic.currentIndex && window.cyberMusic.isPlaying ? 'btn-pink' : ''}">
+        <button class="btn btn-sm ${idx === window.cyberMusic.currentIndex && window.cyberMusic.isPlaying ? 'btn-pink' : 'btn-primary'}">
           ${idx === window.cyberMusic.currentIndex && window.cyberMusic.isPlaying ? 'PLAYING' : 'PLAY'}
         </button>
       </div>
     `).join('');
 
-    container.querySelectorAll('.playlist-track-row').forEach(row => {
+    container.querySelectorAll('[data-idx]').forEach(row => {
       row.addEventListener('click', () => {
         const idx = parseInt(row.getAttribute('data-idx'), 10);
         window.cyberMusic.loadTrack(idx, true);
@@ -387,36 +363,36 @@ class CyberApp {
   }
 
   // ==========================================
-  // Navigation & SPA Section Switcher
+  // Navigation & Section Switcher
   // ==========================================
   bindNavigation() {
-    const navItems = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('.cyber-section');
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const sidebar = document.getElementById('app-sidebar');
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    const sections = document.querySelectorAll('.section-block');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
 
     const switchSection = (targetId) => {
-      navItems.forEach(item => {
-        item.classList.toggle('active', item.getAttribute('data-section') === targetId);
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('data-section') === targetId);
       });
       sections.forEach(sec => {
         sec.classList.toggle('active', sec.id === `section-${targetId}`);
       });
-      if (sidebar.classList.contains('open')) {
-        sidebar.classList.remove('open');
+      if (mobileDrawer.classList.contains('open')) {
+        mobileDrawer.classList.remove('open');
+        menuToggle.classList.remove('active');
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    navItems.forEach(item => {
-      item.addEventListener('click', (e) => {
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = item.getAttribute('data-section');
-        switchSection(target);
+        const target = link.getAttribute('data-section');
+        if (target) switchSection(target);
       });
     });
 
-    // In-page navigation triggers
     document.querySelectorAll('[data-navigate]').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-navigate');
@@ -424,19 +400,30 @@ class CyberApp {
       });
     });
 
-    // Mobile Hamburger
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
+    if (menuToggle && mobileDrawer) {
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        mobileDrawer.classList.toggle('open');
       });
     }
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        navbar.style.background = 'rgba(7, 11, 20, 0.95)';
+        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.6)';
+      } else {
+        navbar.style.background = 'rgba(7, 11, 20, 0.85)';
+        navbar.style.boxShadow = 'none';
+      }
+    });
   }
 
   // ==========================================
-  // Modals & Forms Handlers
+  // Modals & Forms
   // ==========================================
   bindModals() {
-    // Universal close buttons
     document.querySelectorAll('[data-close]').forEach(btn => {
       btn.addEventListener('click', () => {
         const modalId = btn.getAttribute('data-close');
@@ -445,7 +432,6 @@ class CyberApp {
       });
     });
 
-    // Lightbox close
     const lightbox = document.getElementById('gallery-lightbox');
     const closeLightbox = document.getElementById('lightbox-close-btn');
     if (closeLightbox) {
@@ -457,7 +443,6 @@ class CyberApp {
       });
     }
 
-    // Open Edit Profile
     const openProf = () => {
       document.getElementById('input-prof-name').value = this.profile.name;
       document.getElementById('input-prof-handle').value = this.profile.handle;
@@ -467,12 +452,14 @@ class CyberApp {
       document.getElementById('modal-edit-profile').classList.add('active');
     };
 
-    const homeEditBtn = document.getElementById('home-edit-btn');
+    const topEditBtn = document.getElementById('btn-top-edit-profile');
+    const heroEditBtn = document.getElementById('hero-edit-btn');
     const profEditBtn = document.getElementById('btn-open-edit-profile');
-    if (homeEditBtn) homeEditBtn.addEventListener('click', openProf);
+
+    if (topEditBtn) topEditBtn.addEventListener('click', openProf);
+    if (heroEditBtn) heroEditBtn.addEventListener('click', openProf);
     if (profEditBtn) profEditBtn.addEventListener('click', openProf);
 
-    // Open Add Skill
     const addSkillBtn = document.getElementById('btn-add-skill');
     if (addSkillBtn) {
       addSkillBtn.addEventListener('click', () => {
@@ -483,18 +470,16 @@ class CyberApp {
       });
     }
 
-    // Open Add Project
     const addProjBtn = document.getElementById('btn-add-project');
     if (addProjBtn) {
       addProjBtn.addEventListener('click', () => {
         document.getElementById('input-proj-id').value = '';
-        document.getElementById('modal-project-title').textContent = 'ADD CYBER PROJECT';
+        document.getElementById('modal-project-title').textContent = 'ADD PROJECT';
         document.getElementById('form-project').reset();
         document.getElementById('modal-project').classList.add('active');
       });
     }
 
-    // Open Upload Gallery Photo
     const uploadPhotoBtn = document.getElementById('btn-upload-photo');
     if (uploadPhotoBtn) {
       uploadPhotoBtn.addEventListener('click', () => {
@@ -503,7 +488,6 @@ class CyberApp {
       });
     }
 
-    // Open Socials Modal
     const editSocialsBtn = document.getElementById('btn-edit-socials');
     if (editSocialsBtn) {
       editSocialsBtn.addEventListener('click', () => {
@@ -515,7 +499,6 @@ class CyberApp {
       });
     }
 
-    // Section music upload redirect or trigger
     const musicAddBtn = document.getElementById('section-music-add-btn');
     if (musicAddBtn) {
       musicAddBtn.addEventListener('click', () => {
@@ -525,7 +508,6 @@ class CyberApp {
   }
 
   bindForms() {
-    // 1. Profile Form Submit
     const formProf = document.getElementById('form-edit-profile');
     if (formProf) {
       formProf.addEventListener('submit', async (e) => {
@@ -536,14 +518,12 @@ class CyberApp {
         this.profile.location = document.getElementById('input-prof-location').value;
         this.profile.bio = document.getElementById('input-prof-bio').value;
 
-        // Avatar file upload
         const avatarFile = document.getElementById('input-prof-avatar-file').files[0];
         if (avatarFile && window.cyberDB) {
           await window.cyberDB.saveAsset('custom_avatar', avatarFile);
           this.profile.avatarUrl = URL.createObjectURL(avatarFile);
         }
 
-        // Cover file upload
         const coverFile = document.getElementById('input-prof-cover-file').files[0];
         if (coverFile && window.cyberDB) {
           await window.cyberDB.saveAsset('custom_cover', coverFile);
@@ -557,7 +537,6 @@ class CyberApp {
       });
     }
 
-    // 2. Skill Form Submit
     const formSkill = document.getElementById('form-skill');
     if (formSkill) {
       formSkill.addEventListener('submit', (e) => {
@@ -586,7 +565,6 @@ class CyberApp {
       });
     }
 
-    // 3. Project Form Submit
     const formProj = document.getElementById('form-project');
     if (formProj) {
       formProj.addEventListener('submit', async (e) => {
@@ -631,11 +609,10 @@ class CyberApp {
         this.renderProjects();
         this.renderStats();
         document.getElementById('modal-project').classList.remove('active');
-        this.showToast('Project archived and published');
+        this.showToast('Project deployed and archived');
       });
     }
 
-    // 4. Gallery Form Submit
     const formGal = document.getElementById('form-gallery');
     if (formGal) {
       formGal.addEventListener('submit', async (e) => {
@@ -651,7 +628,6 @@ class CyberApp {
       });
     }
 
-    // 5. Socials Form Submit
     const formSoc = document.getElementById('form-socials');
     if (formSoc) {
       formSoc.addEventListener('submit', (e) => {
@@ -663,7 +639,7 @@ class CyberApp {
         this.saveData('neon_socials', this.socials);
         this.renderSocials();
         document.getElementById('modal-socials').classList.remove('active');
-        this.showToast('Social nodes recalibrated');
+        this.showToast('Social endpoints updated');
       });
     }
   }
@@ -683,7 +659,7 @@ class CyberApp {
   }
 
   deleteSkill(id) {
-    if (!confirm('Are you sure you want to remove this skill?')) return;
+    if (!confirm('Are you sure you want to delete this skill?')) return;
     this.skills = this.skills.filter(s => s.id !== id);
     this.saveData('neon_skills', this.skills);
     this.renderSkills();
@@ -705,7 +681,7 @@ class CyberApp {
   }
 
   deleteProject(id) {
-    if (!confirm('Are you sure you want to remove this project?')) return;
+    if (!confirm('Are you sure you want to delete this project?')) return;
     this.projects = this.projects.filter(p => p.id !== id);
     this.saveData('neon_projects', this.projects);
     this.renderProjects();
@@ -730,12 +706,11 @@ class CyberApp {
   }
 
   // ==========================================
-  // Mini Player Controls & Dashboard Sync
+  // Mini Player Controls
   // ==========================================
   bindMiniPlayer() {
     if (!window.cyberMusic) return;
 
-    // Mini Play button
     const playBtn = document.getElementById('mini-play-btn');
     if (playBtn) {
       playBtn.addEventListener('click', () => {
@@ -744,13 +719,11 @@ class CyberApp {
       });
     }
 
-    // Mini Prev & Next
     const prevBtn = document.getElementById('mini-prev-btn');
     const nextBtn = document.getElementById('mini-next-btn');
     if (prevBtn) prevBtn.addEventListener('click', () => window.cyberMusic.prev());
     if (nextBtn) nextBtn.addEventListener('click', () => window.cyberMusic.next());
 
-    // Mini Scrub
     const scrub = document.getElementById('mini-scrub');
     if (scrub) {
       scrub.addEventListener('input', (e) => {
@@ -762,7 +735,6 @@ class CyberApp {
       });
     }
 
-    // Mini Volume
     const vol = document.getElementById('mini-volume');
     if (vol) {
       vol.value = window.cyberMusic.volume;
@@ -771,7 +743,6 @@ class CyberApp {
       });
     }
 
-    // Home widget play button
     const homePlayBtn = document.getElementById('home-play-toggle-btn');
     if (homePlayBtn) {
       homePlayBtn.addEventListener('click', () => {
@@ -790,34 +761,29 @@ class CyberApp {
     const root = document.documentElement;
     const themes = {
       cyan: {
-        primary: '#00f3ff',
-        secondary: '#ff007f',
-        glow: 'rgba(0, 243, 255, 0.45)',
-        glowSec: 'rgba(255, 0, 127, 0.35)'
+        primary: '#00f2fe',
+        secondary: '#4facfe',
+        glow: 'rgba(0, 242, 254, 0.45)'
       },
       pink: {
         primary: '#ff007f',
         secondary: '#9d00ff',
-        glow: 'rgba(255, 0, 127, 0.45)',
-        glowSec: 'rgba(157, 0, 255, 0.35)'
+        glow: 'rgba(255, 0, 127, 0.45)'
       },
       purple: {
         primary: '#9d00ff',
-        secondary: '#00f3ff',
-        glow: 'rgba(157, 0, 255, 0.45)',
-        glowSec: 'rgba(0, 243, 255, 0.35)'
+        secondary: '#00f2fe',
+        glow: 'rgba(157, 0, 255, 0.45)'
       },
       green: {
         primary: '#00ff66',
-        secondary: '#00f3ff',
-        glow: 'rgba(0, 255, 102, 0.45)',
-        glowSec: 'rgba(0, 243, 255, 0.35)'
+        secondary: '#00f2fe',
+        glow: 'rgba(0, 255, 102, 0.45)'
       },
       yellow: {
         primary: '#ffe600',
         secondary: '#ff007f',
-        glow: 'rgba(255, 230, 0, 0.45)',
-        glowSec: 'rgba(255, 0, 127, 0.35)'
+        glow: 'rgba(255, 230, 0, 0.45)'
       }
     };
 
@@ -825,10 +791,8 @@ class CyberApp {
     root.style.setProperty('--accent-primary', t.primary);
     root.style.setProperty('--accent-secondary', t.secondary);
     root.style.setProperty('--accent-glow', t.glow);
-    root.style.setProperty('--accent-glow-secondary', t.glowSec);
 
-    // Update active button state
-    document.querySelectorAll('.palette-btn').forEach(btn => {
+    document.querySelectorAll('#palette-picker button').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
     });
   }
@@ -844,17 +808,10 @@ class CyberApp {
 
     const checkAnim = document.getElementById('setting-animations');
     if (checkAnim) checkAnim.checked = this.animations;
-
-    if (!this.animations) {
-      document.body.classList.add('no-animations');
-    } else {
-      document.body.classList.remove('no-animations');
-    }
   }
 
   bindSettings() {
-    // Palette buttons
-    document.querySelectorAll('.palette-btn').forEach(btn => {
+    document.querySelectorAll('#palette-picker button').forEach(btn => {
       btn.addEventListener('click', () => {
         const theme = btn.getAttribute('data-theme');
         this.applyTheme(theme);
@@ -862,7 +819,6 @@ class CyberApp {
       });
     });
 
-    // Scanlines switch
     const checkScan = document.getElementById('setting-scanlines');
     if (checkScan) {
       checkScan.addEventListener('change', (e) => {
@@ -872,7 +828,6 @@ class CyberApp {
       });
     }
 
-    // Animations switch
     const checkAnim = document.getElementById('setting-animations');
     if (checkAnim) {
       checkAnim.addEventListener('change', (e) => {
@@ -882,7 +837,6 @@ class CyberApp {
       });
     }
 
-    // Export Data JSON
     const exportBtn = document.getElementById('btn-export-data');
     if (exportBtn) {
       exportBtn.addEventListener('click', () => {
@@ -900,14 +854,13 @@ class CyberApp {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `cyber_profile_backup_${Date.now()}.json`;
+        a.download = `piyush_cyber_profile_backup_${Date.now()}.json`;
         a.click();
         URL.revokeObjectURL(url);
         this.showToast('Profile configuration exported as JSON');
       });
     }
 
-    // Import Data JSON
     const importInput = document.getElementById('import-json-file');
     if (importInput) {
       importInput.addEventListener('change', (e) => {
@@ -943,7 +896,6 @@ class CyberApp {
       });
     }
 
-    // Reset All Data
     const resetBtn = document.getElementById('btn-reset-data');
     if (resetBtn) {
       resetBtn.addEventListener('click', async () => {
@@ -959,7 +911,6 @@ class CyberApp {
     }
   }
 
-  // Toast System
   showToast(msg) {
     const container = document.getElementById('toast-container');
     if (!container) return;
