@@ -3,58 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>PIYUSH | Official Cyber Profile</title>
+  <title>PIYUSH | Software Engineer &amp; Audio Architect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Background Cyber Elements -->
-  <div class="cyber-bg">
-    <div class="glow-orb glow-top-left"></div>
-    <div class="glow-orb glow-bottom-right"></div>
-    <div class="grid-overlay"></div>
+  <!-- Clean Ambient Background -->
+  <div class="ambient-bg">
+    <div class="ambient-orb orb-top-left"></div>
+    <div class="ambient-orb orb-bottom-right"></div>
+    <div class="ambient-orb orb-center"></div>
   </div>
 
-  <div class="scanlines" id="scanlines-layer"></div>
-
-  <!-- Toast Notifications Container -->
-  <div class="cyber-toast-container" id="toast-container"></div>
-
-  <!-- Top Sticky Navbar -->
+  <!-- Top Sticky Navigation -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="brand-logo" data-nav="home">
-        <div class="logo-icon">
-          <span class="logo-core"></span>
-          <span class="logo-ring"></span>
-        </div>
-        <span class="logo-text">PIYUSH <span class="text-cyan">Profile</span></span>
+        <div class="brand-avatar-mini">P</div>
+        <span class="brand-name">PIYUSH</span>
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Desktop Links -->
       <nav class="nav-links">
         <a class="nav-link active" data-section="home">Home</a>
-        <a class="nav-link" data-section="profile">Profile</a>
         <a class="nav-link" data-section="about">About</a>
         <a class="nav-link" data-section="skills">Skills</a>
         <a class="nav-link" data-section="projects">Projects</a>
         <a class="nav-link" data-section="gallery">Gallery</a>
         <a class="nav-link" data-section="music">Music</a>
-        <a class="nav-link" data-section="socials">Socials</a>
-        <a class="nav-link" data-section="settings">Settings</a>
+        <a class="nav-link" data-section="contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <button class="btn btn-nav" id="btn-top-edit-profile">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-          </svg>
-          <span>Edit Profile</span>
-        </button>
+        <a href="#contact" class="btn btn-sm btn-primary" data-section-trigger="contact">
+          <span>Get in Touch</span>
+        </a>
         <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
           <span></span>
           <span></span>
@@ -63,91 +49,80 @@
       </div>
     </div>
 
-    <!-- Mobile Drawer Navigation -->
+    <!-- Mobile Navigation Drawer -->
     <div class="mobile-drawer" id="mobileDrawer">
       <a class="mobile-nav-link active" data-section="home">Home</a>
-      <a class="mobile-nav-link" data-section="profile">My Profile</a>
-      <a class="mobile-nav-link" data-section="about">About Me</a>
-      <a class="mobile-nav-link" data-section="skills">My Skills</a>
-      <a class="mobile-nav-link" data-section="projects">My Projects</a>
-      <a class="mobile-nav-link" data-section="gallery">Cyber Gallery</a>
-      <a class="mobile-nav-link" data-section="music">Favourite Music</a>
-      <a class="mobile-nav-link" data-section="socials">Social Links</a>
-      <a class="mobile-nav-link" data-section="settings">Settings</a>
+      <a class="mobile-nav-link" data-section="about">About</a>
+      <a class="mobile-nav-link" data-section="skills">Skills</a>
+      <a class="mobile-nav-link" data-section="projects">Projects</a>
+      <a class="mobile-nav-link" data-section="gallery">Gallery</a>
+      <a class="mobile-nav-link" data-section="music">Music</a>
+      <a class="mobile-nav-link" data-section="contact">Contact</a>
       <div style="margin-top:0.8rem;">
-        <a href="music.html" class="btn btn-pink" style="width:100%;">Open Full Music Player</a>
+        <a href="music.html" class="btn btn-secondary" style="width:100%;">Open Full Music Player</a>
       </div>
     </div>
   </header>
 
   <main>
 
-    <!-- Hero Profile Section -->
+    <!-- Hero Section -->
     <section class="hero" id="hero">
       <div class="container">
-        
-        <div class="hero-banner-card">
-          <div class="banner-cover-wrap">
-            <img src="assets/images/default-cover.svg" alt="Cover" class="banner-cover-img" id="hero-cover">
-            <div class="banner-overlay"></div>
+        <div class="hero-card">
+          <div class="hero-cover">
+            <img src="assets/images/default-cover.svg" alt="Cover" class="hero-cover-img" id="hero-cover">
           </div>
-          <div class="profile-main-meta">
-            <div class="avatar-ring-container">
-              <div class="avatar-ring"></div>
-              <img src="assets/images/default-avatar.svg" alt="Avatar" class="profile-avatar-img" id="hero-avatar">
+          <div class="hero-body">
+            <div class="avatar-wrapper">
+              <img src="assets/images/default-avatar.svg" alt="PIYUSH" class="profile-avatar" id="hero-avatar">
+              <div class="status-badge" title="Available for projects"></div>
             </div>
-            <div class="profile-identity">
-              <div class="badge-pill">
-                <span class="badge-dot"></span>
-                <span class="badge-text">OFFICIAL CYBER PROFILE &bull; ARCHITECT</span>
+            <div class="hero-info">
+              <div class="role-pill">
+                <span>FULL-STACK SOFTWARE ENGINEER &amp; AUDIO ARCHITECT</span>
               </div>
-              <h1 class="profile-name">
-                <span class="gradient-text" id="hero-name">PIYUSH</span>
+              <h1 class="profile-title">
+                Hello, I'm <span class="gradient-text">PIYUSH</span>
               </h1>
-              <div class="profile-handle" id="hero-handle">@cyber_piyush</div>
-              <p class="profile-tagline" id="hero-bio">
-                Building next-generation holographic interfaces and low-latency audio systems. Full-stack cyber architect & creator.
+              <p class="profile-tagline">
+                Passionate software developer building high-performance web applications, interactive audio synthesizers, and elegant digital experiences with clean architecture.
               </p>
             </div>
-            <div class="profile-actions">
-              <button class="btn btn-primary btn-glow" id="hero-edit-btn">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-                </svg>
-                <span>Edit Profile</span>
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-section-trigger="projects">
+                <span>View Projects</span>
               </button>
-              <a href="music.html" class="btn btn-pc">
+              <a href="music.html" class="btn btn-secondary">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polygon points="5 3 19 12 5 21 5 3"/>
                 </svg>
-                <span>Full Music Player</span>
+                <span>Music Player</span>
               </a>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Metrics Banner -->
-    <section class="metrics-banner">
+    <!-- Metrics Section -->
+    <section class="metrics-section">
       <div class="container metrics-grid">
         <div class="metric-card">
-          <div class="metric-number" id="stat-projects-count">3</div>
-          <div class="metric-label">Deployed Projects</div>
+          <div class="metric-num">3+</div>
+          <div class="metric-lbl">Featured Deployments</div>
         </div>
         <div class="metric-card">
-          <div class="metric-number" id="stat-skills-count" style="color:var(--blue-primary);">6</div>
-          <div class="metric-label">Mastered Skills</div>
+          <div class="metric-num">6+</div>
+          <div class="metric-lbl">Core Technologies</div>
         </div>
         <div class="metric-card">
-          <div class="metric-number" id="stat-gallery-count" style="color:var(--purple-accent);">4</div>
-          <div class="metric-label">Gallery Captures</div>
+          <div class="metric-num">100%</div>
+          <div class="metric-lbl">Responsive &amp; Offline Ready</div>
         </div>
         <div class="metric-card">
-          <div class="metric-number" id="stat-music-count" style="color:var(--pink-accent);">1</div>
-          <div class="metric-label">Favorite Tracks</div>
+          <div class="metric-num">4.9/5</div>
+          <div class="metric-lbl">Architecture Quality</div>
         </div>
       </div>
     </section>
@@ -160,27 +135,29 @@
           <!-- Left Column -->
           <div style="display:flex; flex-direction:column; gap:1.8rem;">
             
-            <div class="glass-card">
-              <div class="section-header" style="margin-bottom:1.2rem;">
-                <div class="section-title" style="font-size:1.35rem;">
-                  <span>FEATURED PROJECTS</span>
+            <div class="card">
+              <div class="section-head" style="margin-bottom:1.2rem;">
+                <div>
+                  <h3 class="section-title" style="font-size:1.35rem;">Featured Projects</h3>
+                  <div class="section-subtitle">Selected works and applications</div>
                 </div>
-                <button class="btn btn-sm btn-ghost" data-navigate="projects">VIEW ALL</button>
+                <button class="btn btn-sm btn-secondary" data-navigate="projects">View All</button>
               </div>
               <div class="projects-grid" id="home-featured-projects">
-                <!-- Dynamically populated -->
+                <!-- Populated dynamically -->
               </div>
             </div>
 
-            <div class="glass-card">
-              <div class="section-header" style="margin-bottom:1.2rem;">
-                <div class="section-title" style="font-size:1.35rem;">
-                  <span>CORE SKILLS PREVIEW</span>
+            <div class="card">
+              <div class="section-head" style="margin-bottom:1.2rem;">
+                <div>
+                  <h3 class="section-title" style="font-size:1.35rem;">Technical Capabilities</h3>
+                  <div class="section-subtitle">Core proficiency and stack</div>
                 </div>
-                <button class="btn btn-sm btn-ghost" data-navigate="skills">VIEW MATRIX</button>
+                <button class="btn btn-sm btn-secondary" data-navigate="skills">Full Stack</button>
               </div>
               <div class="skills-grid" id="home-skills-preview">
-                <!-- Dynamically populated -->
+                <!-- Populated dynamically -->
               </div>
             </div>
 
@@ -189,36 +166,38 @@
           <!-- Right Column -->
           <div style="display:flex; flex-direction:column; gap:1.8rem;">
             
-            <!-- Quick Music Widget -->
-            <div class="glass-card">
-              <div class="section-header" style="margin-bottom:1.2rem;">
-                <div class="section-title" style="font-size:1.2rem;">
-                  <span>CYBER AUDIO</span>
+            <!-- Music Player Widget -->
+            <div class="card">
+              <div class="section-head" style="margin-bottom:1.2rem;">
+                <div>
+                  <h3 class="section-title" style="font-size:1.25rem;">Audio Synthesis</h3>
+                  <div class="section-subtitle">Atmospheric soundscapes</div>
                 </div>
-                <a href="music.html" class="btn btn-sm btn-pink">FULL PLAYER</a>
+                <a href="music.html" class="btn btn-sm btn-secondary">Full Screen</a>
               </div>
-              <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem;">
-                <img src="assets/images/default-album.svg" alt="Album" id="home-music-cover" style="width:65px; height:65px; border-radius:10px; border:1px solid var(--border-glass); object-fit:cover;">
+              <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.4rem;">
+                <img src="assets/images/default-album.svg" alt="Album" id="home-music-cover" style="width:68px; height:68px; border-radius:10px; border:1px solid var(--border-subtle); object-fit:cover;">
                 <div style="overflow:hidden;">
                   <div style="font-weight:700; font-size:1.05rem; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;" id="home-music-title">Neon Cyber Dream</div>
-                  <div style="font-size:0.85rem; color:var(--accent-primary);" id="home-music-artist">SynthWave Matrix</div>
+                  <div style="font-size:0.85rem; color:var(--text-muted);" id="home-music-artist">SynthWave Matrix</div>
                 </div>
               </div>
-              <button class="btn btn-primary btn-glow" id="home-play-toggle-btn" style="width:100%;">
+              <button class="btn btn-primary" id="home-play-toggle-btn" style="width:100%;">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                <span>Play Sound Track</span>
+                <span>Play Sound Sample</span>
               </button>
             </div>
 
-            <!-- Social Links Quick Grid -->
-            <div class="glass-card">
-              <div class="section-header" style="margin-bottom:1.2rem;">
-                <div class="section-title" style="font-size:1.2rem;">
-                  <span>COMMUNICATION NODES</span>
+            <!-- Connect Channels -->
+            <div class="card">
+              <div class="section-head" style="margin-bottom:1.2rem;">
+                <div>
+                  <h3 class="section-title" style="font-size:1.25rem;">Connect Directly</h3>
+                  <div class="section-subtitle">Social &amp; developer networks</div>
                 </div>
               </div>
               <div style="display:flex; flex-direction:column; gap:0.6rem;" id="home-socials-list">
-                <!-- Dynamically populated -->
+                <!-- Populated dynamically -->
               </div>
             </div>
 
@@ -228,112 +207,66 @@
       </div>
     </section>
 
-    <!-- ================= 2. MY PROFILE SECTION ================= -->
-    <section class="section-block" id="section-profile">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title gradient-text">IDENTITY MATRIX</h2>
-            <div class="section-subtitle">Personal credentials, biography, and platform identifiers</div>
-          </div>
-          <button class="btn btn-primary" id="btn-open-edit-profile">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-            </svg>
-            <span>Edit Credentials</span>
-          </button>
-        </div>
-
-        <div class="glass-card" style="margin-bottom:2rem;">
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.8rem;">
-            <div>
-              <span class="metric-label">Full Name</span>
-              <div style="font-size:1.4rem; font-weight:700; margin-top:0.3rem;" id="profile-view-name">PIYUSH</div>
-            </div>
-            <div>
-              <span class="metric-label">Handle / Identity</span>
-              <div style="font-size:1.4rem; font-weight:700; color:var(--accent-primary); margin-top:0.3rem;" id="profile-view-handle">@cyber_piyush</div>
-            </div>
-            <div>
-              <span class="metric-label">Profession</span>
-              <div style="font-size:1.15rem; font-weight:600; margin-top:0.3rem;" id="profile-view-profession">Cyber Systems Architect</div>
-            </div>
-            <div>
-              <span class="metric-label">Base Location</span>
-              <div style="font-size:1.15rem; font-weight:600; margin-top:0.3rem;" id="profile-view-location">Neo Tokyo / Sector 7</div>
-            </div>
-          </div>
-          <div style="margin-top:1.8rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06);">
-            <span class="metric-label">Biography & Overview</span>
-            <p style="margin-top:0.6rem; line-height:1.7; font-size:1.05rem;" id="profile-view-bio">
-              Architecting resilient cyber platforms, Web Audio synthesizers, and neon visualizers. Specializing in high-performance frontend interfaces with zero-external-dependency footprints.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= 3. ABOUT ME SECTION ================= -->
+    <!-- ================= 2. ABOUT SECTION ================= -->
     <section class="section-block" id="section-about">
       <div class="container">
-        <div class="section-header">
+        <div class="section-head">
           <div>
-            <h2 class="section-title gradient-text">ABOUT THE OPERATOR</h2>
-            <div class="section-subtitle">Chronicles, technical philosophy, and mission parameters</div>
+            <h2 class="section-title">About Me</h2>
+            <div class="section-subtitle">Background, journey, and engineering philosophies</div>
           </div>
         </div>
 
         <div class="grid-2">
-          <div class="glass-card">
-            <h3 class="cyber-font" style="margin-bottom:1rem; color:var(--accent-primary);">THE CHRONICLES</h3>
+          <div class="card">
+            <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem; color:#fff;">Background &amp; Passion</h3>
             <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.2rem;">
-              Born in the silicon-lit backstreets of the web development renaissance, I explore the intersections of modern browser standards, vanilla JavaScript optimization, and futuristic neon aesthetics.
+              I am a software engineer focused on building clean, high-performance web applications and digital tools. I believe that elegant software is intuitive, blazingly fast, and respectful of the user's hardware.
             </p>
             <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.8rem;">
-              My philosophy: true speed and resilience come from mastering foundational web APIs—HTML5 Audio, Canvas, IndexedDB, and CSS hardware-accelerated transforms—without the bloat of multi-megabyte frameworks.
+              My approach emphasizes clean vanilla web standards, modular architectures, and rich multimedia experiences like real-time Web Audio API synthesizers and offline-first IndexedDB persistence.
             </p>
 
-            <h3 class="cyber-font" style="margin-bottom:1.2rem; color:var(--pink-accent);">TIMELINE & MILESTONES</h3>
+            <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1.2rem; color:#fff;">Experience &amp; Milestones</h3>
             <div style="display:flex; flex-direction:column; gap:1.4rem; border-left:2px solid var(--accent-primary); padding-left:1.5rem;">
               <div>
-                <div class="cyber-font" style="color:var(--accent-primary); font-size:0.85rem;">2026 - PRESENT</div>
-                <div style="font-weight:700; font-size:1.1rem;">Principal Cyber Systems Architect</div>
-                <div style="font-size:0.9rem; color:var(--text-muted);">Designing offline-first client dashboards and real-time audio visualization engines.</div>
+                <div style="color:var(--accent-light); font-size:0.85rem; font-weight:700;">2026 - PRESENT</div>
+                <div style="font-weight:700; font-size:1.1rem;">Full-Stack &amp; Audio Architect</div>
+                <div style="font-size:0.92rem; color:var(--text-muted);">Designing offline-first personal portfolio suites and real-time audio visualization engines.</div>
               </div>
               <div>
-                <div class="cyber-font" style="color:var(--blue-primary); font-size:0.85rem;">2024 - 2026</div>
-                <div style="font-weight:700; font-size:1.1rem;">Senior Frontend Engineer</div>
-                <div style="font-size:0.9rem; color:var(--text-muted);">Constructed low-latency Web Audio suites and interactive data hubs.</div>
+                <div style="color:var(--accent-blue); font-size:0.85rem; font-weight:700;">2024 - 2026</div>
+                <div style="font-weight:700; font-size:1.1rem;">Senior Frontend Developer</div>
+                <div style="font-size:0.92rem; color:var(--text-muted);">Crafted modern client web architectures, responsive glassmorphism interfaces, and robust user dashboards.</div>
               </div>
               <div>
-                <div class="cyber-font" style="color:var(--purple-accent); font-size:0.85rem;">2022 - 2024</div>
-                <div style="font-weight:700; font-size:1.1rem;">UI/UX Cyberpunk Specialist</div>
-                <div style="font-size:0.9rem; color:var(--text-muted);">Pioneered glowing glassmorphism design systems for high-tech dashboards.</div>
+                <div style="color:var(--accent-secondary); font-size:0.85rem; font-weight:700;">2022 - 2024</div>
+                <div style="font-weight:700; font-size:1.1rem;">Application Specialist</div>
+                <div style="font-size:0.92rem; color:var(--text-muted);">Pioneered cross-platform utilities, desktop integrations, and interactive web tools.</div>
               </div>
             </div>
           </div>
 
           <div style="display:flex; flex-direction:column; gap:1.5rem;">
-            <div class="glass-card">
-              <h4 class="cyber-font" style="margin-bottom:1rem; color:var(--accent-primary);">OPERATIONAL DIRECTIVES</h4>
+            <div class="card">
+              <h4 style="font-size:1.1rem; font-weight:700; margin-bottom:1rem; color:#fff;">Core Principles</h4>
               <ul style="list-style:none; display:flex; flex-direction:column; gap:0.8rem; font-size:0.95rem; color:var(--text-muted);">
-                <li>⚡ 100% Zero Frameworks Overhead</li>
-                <li>🔒 Privacy-First Local Persistence (IndexedDB)</li>
-                <li>🎵 High-Fidelity Audio Synthesis</li>
-                <li>🚀 Ultra-Responsive Across All Form Factors</li>
+                <li>⚡ Performance First — Zero unnecessary dependencies</li>
+                <li>🔒 Privacy &amp; Offline Persistence with IndexedDB</li>
+                <li>🎵 Rich Interactive Audio &amp; Canvas Visuals</li>
+                <li>📱 Fully Adaptive across Mobile, Tablet &amp; Desktop</li>
               </ul>
             </div>
 
-            <div class="glass-card">
-              <h4 class="cyber-font" style="margin-bottom:1rem; color:var(--pink-accent);">CORE INTERESTS</h4>
+            <div class="card">
+              <h4 style="font-size:1.1rem; font-weight:700; margin-bottom:1rem; color:#fff;">Primary Focus Areas</h4>
               <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                <span class="project-tag">SYNTHWAVE</span>
-                <span class="project-tag">CYBERNETICS</span>
-                <span class="project-tag">WEB AUDIO API</span>
-                <span class="project-tag">GLASSDESIGN</span>
-                <span class="project-tag">NEURAL NETS</span>
-                <span class="project-tag">INDEXEDDB</span>
+                <span class="project-tag">Full-Stack Web</span>
+                <span class="project-tag">Web Audio API</span>
+                <span class="project-tag">Modern UI/UX</span>
+                <span class="project-tag">JavaScript ES6+</span>
+                <span class="project-tag">IndexedDB Storage</span>
+                <span class="project-tag">Clean Architecture</span>
               </div>
             </div>
           </div>
@@ -341,221 +274,150 @@
       </div>
     </section>
 
-    <!-- ================= 4. MY SKILLS SECTION ================= -->
+    <!-- ================= 3. SKILLS SECTION ================= -->
     <section class="section-block" id="section-skills">
       <div class="container">
-        <div class="section-header">
+        <div class="section-head">
           <div>
-            <h2 class="section-title gradient-text">SKILL MATRIX</h2>
-            <div class="section-subtitle">Proficiency telemetry and technical competencies</div>
+            <h2 class="section-title">Skills &amp; Expertise</h2>
+            <div class="section-subtitle">Technical competencies and engineering mastery</div>
           </div>
-          <button class="btn btn-primary" id="btn-add-skill">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            <span>Add Capability</span>
-          </button>
         </div>
 
         <div class="skills-grid" id="full-skills-grid">
-          <!-- Dynamically populated -->
+          <!-- Populated dynamically -->
         </div>
       </div>
     </section>
 
-    <!-- ================= 5. MY PROJECTS SECTION ================= -->
+    <!-- ================= 4. PROJECTS SECTION ================= -->
     <section class="section-block" id="section-projects">
       <div class="container">
-        <div class="section-header">
+        <div class="section-head">
           <div>
-            <h2 class="section-title gradient-text">PROJECT ARCHIVE</h2>
-            <div class="section-subtitle">Live deployments, repositories, and digital prototypes</div>
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-subtitle">Real deployments, applications, and digital creations</div>
           </div>
-          <button class="btn btn-primary" id="btn-add-project">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            <span>Add Project</span>
-          </button>
         </div>
 
         <div class="projects-grid" id="full-projects-grid">
-          <!-- Dynamically populated -->
+          <!-- Populated dynamically -->
         </div>
       </div>
     </section>
 
-    <!-- ================= 6. GALLERY SECTION ================= -->
+    <!-- ================= 5. GALLERY SECTION ================= -->
     <section class="section-block" id="section-gallery">
       <div class="container">
-        <div class="section-header">
+        <div class="section-head">
           <div>
-            <h2 class="section-title gradient-text">CYBER GALLERY</h2>
-            <div class="section-subtitle">Holographic captures stored securely in browser IndexedDB</div>
+            <h2 class="section-title">Visual Gallery</h2>
+            <div class="section-subtitle">Curated project snapshots and aesthetic highlights</div>
           </div>
-          <button class="btn btn-primary" id="btn-upload-photo">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            <span>Upload Photo</span>
-          </button>
         </div>
 
         <div class="gallery-grid" id="full-gallery-grid">
-          <!-- Dynamically populated from IndexedDB -->
+          <!-- Populated dynamically -->
         </div>
       </div>
     </section>
 
-    <!-- ================= 7. MUSIC SECTION ================= -->
+    <!-- ================= 6. MUSIC SECTION ================= -->
     <section class="section-block" id="section-music">
       <div class="container">
-        <div class="section-header">
+        <div class="section-head">
           <div>
-            <h2 class="section-title gradient-text">FAVOURITE MUSIC</h2>
-            <div class="section-subtitle">Personal cyberpunk audio vault & synthesizer playback</div>
+            <h2 class="section-title">Favourite Music Vault</h2>
+            <div class="section-subtitle">Ambient synthesizer audio and personalized audio tracks</div>
           </div>
-          <a href="music.html" class="btn btn-pink">
+          <a href="music.html" class="btn btn-primary">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polygon points="5 3 19 12 5 21 5 3"/>
             </svg>
-            <span>Launch Full Music Player</span>
+            <span>Launch Dedicated Player</span>
           </a>
         </div>
 
-        <div class="glass-card">
+        <div class="card">
           <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
             <div>
-              <h3 class="cyber-font text-cyan">AUDIO ARCHIVE</h3>
-              <p style="color:var(--text-muted); font-size:0.9rem;">Listen with the fixed mini player or open the dedicated visualizer</p>
+              <h3 style="font-size:1.2rem; font-weight:700;">Audio Repository</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem;">Listen instantly or open the full visualizer studio</p>
             </div>
-            <button class="btn btn-sm btn-nav" id="section-music-add-btn">Upload MP3 / Audio</button>
+            <a href="music.html" class="btn btn-sm btn-secondary">Upload Audio File</a>
           </div>
 
           <div style="display:flex; flex-direction:column; gap:0.6rem;" id="section-music-playlist">
-            <!-- Dynamically populated -->
+            <!-- Populated dynamically -->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= 8. SOCIAL LINKS SECTION ================= -->
-    <section class="section-block" id="section-socials">
+    <!-- ================= 7. CONTACT SECTION ================= -->
+    <section class="section-block" id="section-contact">
       <div class="container">
-        <div class="section-header">
+        <div class="section-head">
           <div>
-            <h2 class="section-title gradient-text">COMMUNICATION NODES</h2>
-            <div class="section-subtitle">Direct endpoints across social networks and repositories</div>
-          </div>
-          <button class="btn btn-primary" id="btn-edit-socials">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-            </svg>
-            <span>Configure Links</span>
-          </button>
-        </div>
-
-        <div class="socials-grid" id="full-socials-grid">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= 9. SETTINGS SECTION ================= -->
-    <section class="section-block" id="section-settings">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title gradient-text">SYSTEM PREFERENCES</h2>
-            <div class="section-subtitle">Theme color presets, visual overlays, and data backup operations</div>
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="section-subtitle">Let's discuss projects, collaborations, or engineering ideas</div>
           </div>
         </div>
 
-        <div style="display:flex; flex-direction:column; gap:1.5rem; max-width:800px; margin:0 auto;">
-          
-          <div class="glass-card">
-            <h3 class="cyber-font" style="margin-bottom:1.2rem; color:var(--accent-primary);">NEON COLOR PALETTE</h3>
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
-              <div>
-                <div style="font-weight:700;">Primary Accent Theme</div>
-                <div style="font-size:0.85rem; color:var(--text-muted);">Calibrate your futuristic frequency</div>
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:1rem; color:#fff;">Contact Coordinates</h3>
+            <p style="color:var(--text-muted); margin-bottom:1.8rem; line-height:1.7;">
+              Feel free to reach out across any of the platforms below. I'm always open to discussing new opportunities, web engineering challenges, and technical architecture.
+            </p>
+
+            <div style="display:flex; flex-direction:column; gap:1.2rem;">
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <div class="social-icon">📍</div>
+                <div>
+                  <div style="font-weight:600; font-size:0.95rem;">Location</div>
+                  <div style="font-size:0.88rem; color:var(--text-muted);">Neo Tokyo / Remote Worldwide</div>
+                </div>
               </div>
-              <div style="display:flex; gap:0.8rem;" id="palette-picker">
-                <button class="btn btn-sm active" style="background:#00f2fe; color:#050a14;" data-theme="cyan">Cyan</button>
-                <button class="btn btn-sm" style="background:#ff007f; color:#fff;" data-theme="pink">Pink</button>
-                <button class="btn btn-sm" style="background:#9d00ff; color:#fff;" data-theme="purple">Purple</button>
-                <button class="btn btn-sm" style="background:#00ff66; color:#050a14;" data-theme="green">Matrix</button>
-                <button class="btn btn-sm" style="background:#ffe600; color:#050a14;" data-theme="yellow">Solar</button>
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <div class="social-icon">💼</div>
+                <div>
+                  <div style="font-weight:600; font-size:0.95rem;">Availability</div>
+                  <div style="font-size:0.88rem; color:var(--accent-emerald);">Open for Consultations &amp; Projects</div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <div class="social-icon">💬</div>
+                <div>
+                  <div style="font-weight:600; font-size:0.95rem;">Social Handles</div>
+                  <div style="font-size:0.88rem; color:var(--text-muted);">@cyber_piyush / PIYUSH</div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="glass-card">
-            <h3 class="cyber-font" style="margin-bottom:1.2rem; color:var(--accent-primary);">VISUAL OVERLAYS</h3>
-            <div style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0; border-bottom:1px solid rgba(255,255,255,0.06);">
-              <div>
-                <div style="font-weight:700;">Scanline Monitor FX</div>
-                <div style="font-size:0.85rem; color:var(--text-muted);">CRT retro monitor scanline simulation</div>
-              </div>
-              <input type="checkbox" id="setting-scanlines" checked style="width:20px; height:20px; cursor:pointer;">
-            </div>
-            <div style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0;">
-              <div>
-                <div style="font-weight:700;">Ambient Animations</div>
-                <div style="font-size:0.85rem; color:var(--text-muted);">Glowing rings & transition animations</div>
-              </div>
-              <input type="checkbox" id="setting-animations" checked style="width:20px; height:20px; cursor:pointer;">
+          <div class="card">
+            <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:1.2rem; color:#fff;">Social Profiles</h3>
+            <div class="socials-grid" id="full-socials-grid" style="grid-template-columns: 1fr;">
+              <!-- Populated dynamically -->
             </div>
           </div>
-
-          <div class="glass-card">
-            <h3 class="cyber-font" style="margin-bottom:1.2rem; color:var(--accent-primary);">DATA PERSISTENCE</h3>
-            <div style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0; border-bottom:1px solid rgba(255,255,255,0.06); flex-wrap:wrap; gap:1rem;">
-              <div>
-                <div style="font-weight:700;">Export JSON Profile Backup</div>
-                <div style="font-size:0.85rem; color:var(--text-muted);">Download your profile, skills, projects, and playlist</div>
-              </div>
-              <button class="btn btn-sm btn-nav" id="btn-export-data">Export JSON</button>
-            </div>
-            <div style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0; border-bottom:1px solid rgba(255,255,255,0.06); flex-wrap:wrap; gap:1rem;">
-              <div>
-                <div style="font-weight:700;">Import Profile Backup</div>
-                <div style="font-size:0.85rem; color:var(--text-muted);">Restore credentials from JSON file</div>
-              </div>
-              <label class="btn btn-sm btn-ghost" style="cursor:pointer;">
-                Import JSON
-                <input type="file" id="import-json-file" accept=".json" style="display:none;">
-              </label>
-            </div>
-            <div style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0; flex-wrap:wrap; gap:1rem;">
-              <div>
-                <div style="font-weight:700; color:var(--pink-accent);">Factory Reset Data</div>
-                <div style="font-size:0.85rem; color:var(--text-muted);">Clear LocalStorage & IndexedDB items</div>
-              </div>
-              <button class="btn btn-sm btn-pink" id="btn-reset-data">Reset All</button>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
+  <!-- Clean Footer -->
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-col">
         <div class="brand-logo footer-logo" style="margin-bottom:1rem;">
-          <div class="logo-icon">
-            <span class="logo-core"></span>
-            <span class="logo-ring"></span>
-          </div>
-          <span class="logo-text">PIYUSH <span class="text-cyan">Profile</span></span>
+          <div class="brand-avatar-mini">P</div>
+          <span class="brand-name">PIYUSH</span>
         </div>
         <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">
-          Next-generation cyber personal profile dashboard. Designed, developed, and owned by <strong>PIYUSH</strong>.
+          Personal profile and engineering portfolio. Crafted with clean vanilla web standards, modern architecture, and high attention to detail.
         </p>
       </div>
 
@@ -563,28 +425,29 @@
         <h4>Navigation</h4>
         <ul class="footer-links">
           <li><a data-section="home" style="cursor:pointer;">Home</a></li>
-          <li><a data-section="profile" style="cursor:pointer;">My Profile</a></li>
+          <li><a data-section="about" style="cursor:pointer;">About Me</a></li>
           <li><a data-section="projects" style="cursor:pointer;">Projects</a></li>
-          <li><a data-section="skills" style="cursor:pointer;">Skills Matrix</a></li>
-          <li><a href="music.html">Music Player</a></li>
+          <li><a data-section="skills" style="cursor:pointer;">Skills</a></li>
+          <li><a href="music.html">Music Studio</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Creator &amp; Owner</h4>
+        <h4>Contact</h4>
         <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.6;">
-          Crafted with passion by <strong>PIYUSH</strong>. Powered by pure HTML5, CSS3, Vanilla JS, Web Audio API, and IndexedDB.
+          Created and maintained by <strong>PIYUSH</strong>.<br>
+          Available for software engineering and creative digital projects.
         </p>
       </div>
     </div>
 
     <div class="container footer-bottom">
-      <p>&copy; 2026 PIYUSH Cyber Profile &bull; All Rights Reserved.</p>
-      <div>Responsive for Mobile &bull; Tablet &bull; Desktop</div>
+      <p>&copy; 2026 PIYUSH &bull; All Rights Reserved.</p>
+      <div>Ultra-Responsive &bull; Pure Web Standards</div>
     </div>
   </footer>
 
-  <!-- ================= FIXED BOTTOM MINI MUSIC PLAYER ================= -->
+  <!-- ================= FIXED BOTTOM MUSIC PLAYER ================= -->
   <footer class="mini-player-bar" id="mini-player">
     <div class="mini-track-info">
       <img src="assets/images/default-album.svg" alt="Album Art" class="mini-album-art" id="mini-cover">
@@ -600,7 +463,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
         </button>
         <button class="player-btn play-circle" id="mini-play-btn" title="Play/Pause">
-          <svg id="mini-play-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <svg id="mini-play-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M8 5v14l11-7z"/>
           </svg>
         </button>
@@ -621,202 +484,14 @@
         <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
       </svg>
       <input type="range" class="volume-slider" id="mini-volume" min="0" max="1" step="0.01" value="0.8">
-      <a href="music.html" class="btn btn-sm btn-nav">FULL PLAYER</a>
+      <a href="music.html" class="btn btn-sm btn-secondary">Full Player</a>
     </div>
   </footer>
 
-  <!-- ================= MODALS ================= -->
-
-  <!-- 1. Edit Profile Modal -->
-  <div class="cyber-modal-overlay" id="modal-edit-profile">
-    <div class="cyber-modal">
-      <div class="modal-header">
-        <h3 class="cyber-font text-cyan">EDIT PROFILE CREDENTIALS</h3>
-        <button class="modal-close-btn" data-close="modal-edit-profile">&times;</button>
-      </div>
-      <form id="form-edit-profile">
-        <div class="form-group">
-          <label class="form-label">FULL NAME *</label>
-          <input type="text" id="input-prof-name" class="form-input" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">USERNAME / HANDLE *</label>
-          <input type="text" id="input-prof-handle" class="form-input" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">PROFESSION</label>
-          <input type="text" id="input-prof-profession" class="form-input">
-        </div>
-        <div class="form-group">
-          <label class="form-label">LOCATION</label>
-          <input type="text" id="input-prof-location" class="form-input">
-        </div>
-        <div class="form-group">
-          <label class="form-label">BIOGRAPHY</label>
-          <textarea id="input-prof-bio" class="form-textarea"></textarea>
-        </div>
-        <div class="form-group">
-          <label class="form-label">CHANGE AVATAR IMAGE</label>
-          <input type="file" id="input-prof-avatar-file" accept="image/*" class="form-input">
-        </div>
-        <div class="form-group">
-          <label class="form-label">CHANGE BANNER COVER</label>
-          <input type="file" id="input-prof-cover-file" accept="image/*" class="form-input">
-        </div>
-        <div class="form-actions">
-          <button type="button" class="btn btn-ghost" data-close="modal-edit-profile">CANCEL</button>
-          <button type="submit" class="btn btn-primary">SAVE CREDENTIALS</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- 2. Add / Edit Skill Modal -->
-  <div class="cyber-modal-overlay" id="modal-skill">
-    <div class="cyber-modal">
-      <div class="modal-header">
-        <h3 class="cyber-font text-cyan" id="modal-skill-title">ADD CAPABILITY</h3>
-        <button class="modal-close-btn" data-close="modal-skill">&times;</button>
-      </div>
-      <form id="form-skill">
-        <input type="hidden" id="input-skill-id">
-        <div class="form-group">
-          <label class="form-label">SKILL NAME *</label>
-          <input type="text" id="input-skill-name" class="form-input" placeholder="e.g. Web Audio API" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">MASTERY PERCENTAGE (0 - 100) *</label>
-          <input type="number" id="input-skill-pct" class="form-input" min="1" max="100" value="90" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">CATEGORY</label>
-          <select id="input-skill-cat" class="form-select">
-            <option value="Frontend">Frontend Interface</option>
-            <option value="Backend">Core Architecture</option>
-            <option value="Cyber">Cyber Security & Audio</option>
-            <option value="Tools">Development & Tools</option>
-          </select>
-        </div>
-        <div class="form-actions">
-          <button type="button" class="btn btn-ghost" data-close="modal-skill">CANCEL</button>
-          <button type="submit" class="btn btn-primary">COMMIT SKILL</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- 3. Add / Edit Project Modal -->
-  <div class="cyber-modal-overlay" id="modal-project">
-    <div class="cyber-modal">
-      <div class="modal-header">
-        <h3 class="cyber-font text-cyan" id="modal-project-title">ADD PROJECT</h3>
-        <button class="modal-close-btn" data-close="modal-project">&times;</button>
-      </div>
-      <form id="form-project">
-        <input type="hidden" id="input-proj-id">
-        <div class="form-group">
-          <label class="form-label">PROJECT TITLE *</label>
-          <input type="text" id="input-proj-title" class="form-input" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">DESCRIPTION *</label>
-          <textarea id="input-proj-desc" class="form-textarea" required></textarea>
-        </div>
-        <div class="form-group">
-          <label class="form-label">TECHNOLOGIES (Comma separated)</label>
-          <input type="text" id="input-proj-tags" class="form-input" placeholder="e.g. Vanilla JS, Web Audio, CSS3">
-        </div>
-        <div class="form-group">
-          <label class="form-label">LIVE DEMO URL</label>
-          <input type="text" id="input-proj-demo" class="form-input" placeholder="https://...">
-        </div>
-        <div class="form-group">
-          <label class="form-label">GITHUB REPO URL</label>
-          <input type="text" id="input-proj-github" class="form-input" placeholder="https://github.com/...">
-        </div>
-        <div class="form-group">
-          <label class="form-label">PROJECT SCREENSHOT</label>
-          <input type="file" id="input-proj-img-file" accept="image/*" class="form-input">
-        </div>
-        <div class="form-actions">
-          <button type="button" class="btn btn-ghost" data-close="modal-project">CANCEL</button>
-          <button type="submit" class="btn btn-primary">DEPLOY PROJECT</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- 4. Upload Gallery Photo Modal -->
-  <div class="cyber-modal-overlay" id="modal-gallery">
-    <div class="cyber-modal">
-      <div class="modal-header">
-        <h3 class="cyber-font text-cyan">STORE TO GALLERY</h3>
-        <button class="modal-close-btn" data-close="modal-gallery">&times;</button>
-      </div>
-      <form id="form-gallery">
-        <div class="form-group">
-          <label class="form-label">IMAGE FILE (IndexedDB Stored) *</label>
-          <input type="file" id="input-gallery-file" accept="image/*" class="form-input" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">CAPTION / TITLE</label>
-          <input type="text" id="input-gallery-title" class="form-input" placeholder="e.g. Neo Night Alley">
-        </div>
-        <div class="form-actions">
-          <button type="button" class="btn btn-ghost" data-close="modal-gallery">CANCEL</button>
-          <button type="submit" class="btn btn-primary">SAVE TO DB</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- 5. Edit Social Links Modal -->
-  <div class="cyber-modal-overlay" id="modal-socials">
-    <div class="cyber-modal">
-      <div class="modal-header">
-        <h3 class="cyber-font text-cyan">CONFIGURE SOCIAL NODES</h3>
-        <button class="modal-close-btn" data-close="modal-socials">&times;</button>
-      </div>
-      <form id="form-socials">
-        <div class="form-group">
-          <label class="form-label">YOUTUBE URL</label>
-          <input type="text" id="soc-youtube" class="form-input">
-        </div>
-        <div class="form-group">
-          <label class="form-label">INSTAGRAM URL</label>
-          <input type="text" id="soc-instagram" class="form-input">
-        </div>
-        <div class="form-group">
-          <label class="form-label">TELEGRAM URL</label>
-          <input type="text" id="soc-telegram" class="form-input">
-        </div>
-        <div class="form-group">
-          <label class="form-label">GITHUB URL</label>
-          <input type="text" id="soc-github" class="form-input">
-        </div>
-        <div class="form-group">
-          <label class="form-label">DISCORD URL</label>
-          <input type="text" id="soc-discord" class="form-input">
-        </div>
-        <div class="form-group">
-          <label class="form-label">X (TWITTER) URL</label>
-          <input type="text" id="soc-x" class="form-input">
-        </div>
-        <div class="form-actions">
-          <button type="button" class="btn btn-ghost" data-close="modal-socials">CANCEL</button>
-          <button type="submit" class="btn btn-primary">SAVE NODES</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- 6. Gallery Lightbox Modal -->
+  <!-- Lightbox Modal -->
   <div class="lightbox-modal" id="gallery-lightbox">
     <button class="lightbox-close" id="lightbox-close-btn">&times;</button>
-    <div class="lightbox-content">
-      <img src="" alt="Lightbox View" class="lightbox-img" id="lightbox-img-element">
-      <div class="lightbox-caption" id="lightbox-caption-text"></div>
-    </div>
+    <img src="" alt="Lightbox View" class="lightbox-img" id="lightbox-img-element">
   </div>
 
   <!-- Scripts -->

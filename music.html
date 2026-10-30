@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>PIYUSH | Cyber Audio Synthesizer</title>
+  <title>PIYUSH | Audio Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="music.css">
 </head>
 <body class="music-app-body">
-  <div class="scanlines"></div>
 
-  <!-- Realtime Web Audio API Background Visualizer -->
+  <!-- Background Visualizer Canvas -->
   <canvas id="visualizer-canvas"></canvas>
 
   <!-- Top Navigation Bar -->
@@ -22,14 +21,14 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
       </svg>
-      <span>RETURN TO PROFILE</span>
+      <span>Back to Portfolio</span>
     </a>
-    <div class="music-header-title gradient-text">PIYUSH AUDIO SYNTHESIZER</div>
-    <button class="btn btn-sm btn-nav" id="open-upload-modal-btn">
+    <div class="music-header-title">PIYUSH AUDIO STUDIO</div>
+    <button class="btn btn-sm btn-secondary" id="open-upload-modal-btn">
       <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
       </svg>
-      <span>ADD TRACK</span>
+      <span>Upload Track</span>
     </button>
   </header>
 
@@ -38,7 +37,7 @@
     
     <!-- Player Showcase -->
     <section class="music-showcase">
-      <!-- Rotating Holographic Vinyl Disc -->
+      <!-- Vinyl Disc Artwork -->
       <div class="album-visual-container">
         <div class="vinyl-disc" id="vinyl-disc">
           <img src="assets/images/default-album.svg" alt="Album Cover" class="vinyl-art-img" id="full-cover">
@@ -58,7 +57,7 @@
 
       <!-- Track Information -->
       <div class="track-showcase-meta">
-        <h1 class="track-showcase-title gradient-text" id="full-title">Neon Cyber Dream</h1>
+        <h1 class="track-showcase-title" id="full-title">Neon Cyber Dream</h1>
         <div class="track-showcase-artist" id="full-artist">SynthWave Matrix</div>
       </div>
 
@@ -80,19 +79,19 @@
           </button>
 
           <button class="music-tool-btn" id="full-prev-btn" title="Previous Track">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
               <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
             </svg>
           </button>
 
           <button class="play-toggle-btn" id="full-play-btn" title="Play / Pause">
-            <svg id="full-play-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <svg id="full-play-icon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z"/>
             </svg>
           </button>
 
           <button class="music-tool-btn" id="full-next-btn" title="Next Track">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
               <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
             </svg>
           </button>
@@ -103,8 +102,8 @@
             </svg>
           </button>
 
-          <button class="music-tool-btn btn-fav" id="full-fav-btn" title="Favorite">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <button class="music-tool-btn" id="full-fav-btn" title="Favorite">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
             </svg>
           </button>
@@ -124,8 +123,8 @@
     <aside class="playlist-drawer">
       <div class="playlist-drawer-header">
         <div class="playlist-header-top">
-          <div class="playlist-title text-cyan">CYBER PLAYLIST</div>
-          <span class="badge-pill" style="padding:0.2rem 0.6rem; font-size:0.75rem;">1 TRACKS</span>
+          <div class="playlist-title">Playlist Library</div>
+          <span style="font-size:0.8rem; color:var(--text-muted);">1 Track</span>
         </div>
         <div class="playlist-search-box">
           <svg class="search-icon-pos" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -144,32 +143,28 @@
   </main>
 
   <!-- Add Audio Track Modal -->
-  <div class="cyber-modal-overlay" id="upload-track-modal">
-    <div class="cyber-modal">
-      <div class="modal-header">
-        <h3 class="cyber-font text-cyan">UPLOAD LOCAL AUDIO</h3>
-        <button class="modal-close-btn" id="close-upload-modal">&times;</button>
+  <div class="lightbox-modal" id="upload-track-modal" style="background: rgba(9, 13, 22, 0.9);">
+    <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; max-width: 480px; width: 100%;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+        <h3 style="font-size:1.2rem; font-weight:700;">Upload Audio Track</h3>
+        <button id="close-upload-modal" style="background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">&times;</button>
       </div>
       <form id="add-track-form">
-        <div class="form-group">
-          <label class="form-label">AUDIO FILE (MP3 / WAV / OGG) *</label>
-          <input type="file" id="track-audio-file" accept="audio/*" class="form-input" required>
+        <div style="margin-bottom:1rem;">
+          <label style="display:block; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Audio File (MP3 / WAV)</label>
+          <input type="file" id="track-audio-file" accept="audio/*" style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid var(--border-subtle); border-radius:8px; color:#fff;" required>
         </div>
-        <div class="form-group">
-          <label class="form-label">TRACK TITLE *</label>
-          <input type="text" id="track-title-input" class="form-input" placeholder="e.g. Cyber City Run" required>
+        <div style="margin-bottom:1rem;">
+          <label style="display:block; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Track Title</label>
+          <input type="text" id="track-title-input" style="width:100%; padding:0.6rem 0.8rem; background:rgba(255,255,255,0.05); border:1px solid var(--border-subtle); border-radius:8px; color:#fff;" required>
         </div>
-        <div class="form-group">
-          <label class="form-label">ARTIST NAME</label>
-          <input type="text" id="track-artist-input" class="form-input" placeholder="e.g. PIYUSH">
+        <div style="margin-bottom:1.5rem;">
+          <label style="display:block; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Artist Name</label>
+          <input type="text" id="track-artist-input" style="width:100%; padding:0.6rem 0.8rem; background:rgba(255,255,255,0.05); border:1px solid var(--border-subtle); border-radius:8px; color:#fff;" placeholder="PIYUSH">
         </div>
-        <div class="form-group">
-          <label class="form-label">ALBUM ART (IMAGE)</label>
-          <input type="file" id="track-cover-file" accept="image/*" class="form-input">
-        </div>
-        <div class="form-actions">
-          <button type="button" class="btn btn-ghost" id="cancel-upload-btn">CANCEL</button>
-          <button type="submit" class="btn btn-primary">ADD TO PLAYLIST</button>
+        <div style="display:flex; justify-content:flex-end; gap:0.8rem;">
+          <button type="button" class="btn btn-sm btn-secondary" id="cancel-upload-btn">Cancel</button>
+          <button type="submit" class="btn btn-sm btn-primary">Add Track</button>
         </div>
       </form>
     </div>
@@ -255,11 +250,9 @@
         if (!audioFile) return;
 
         const title = document.getElementById('track-title-input').value;
-        const artist = document.getElementById('track-artist-input').value;
-        const coverInput = document.getElementById('track-cover-file');
-        const coverFile = coverInput.files[0] || null;
+        const artist = document.getElementById('track-artist-input').value || 'PIYUSH';
 
-        await window.cyberMusic.addTrack(audioFile, title, artist, coverFile);
+        await window.cyberMusic.addTrack(audioFile, title, artist, null);
         closeModal();
       });
     });

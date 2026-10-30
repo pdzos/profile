@@ -1,46 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
   <defs>
-    <radialGradient id="albumVinyl" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#2a0845"/>
-      <stop offset="35%" stop-color="#0b0818"/>
-      <stop offset="70%" stop-color="#14092b"/>
-      <stop offset="100%" stop-color="#05020c"/>
-    </radialGradient>
-    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f3ff"/>
-      <stop offset="50%" stop-color="#ff007f"/>
-      <stop offset="100%" stop-color="#7928ca"/>
+    <linearGradient id="albumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#090d16"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
   </defs>
 
-  <!-- Album Card Background -->
-  <rect width="500" height="500" rx="20" fill="url(#albumVinyl)"/>
-  <rect x="2" y="2" width="496" height="496" rx="18" fill="none" stroke="url(#neonGradient)" stroke-width="2" opacity="0.8"/>
+  <!-- Album Background -->
+  <rect width="500" height="500" rx="16" fill="url(#albumGrad)"/>
+  <rect x="2" y="2" width="496" height="496" rx="14" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
 
-  <!-- Vinyl Grooves -->
-  <circle cx="250" cy="250" r="220" fill="none" stroke="#251644" stroke-width="2"/>
-  <circle cx="250" cy="250" r="195" fill="none" stroke="#1d1238" stroke-width="2"/>
-  <circle cx="250" cy="250" r="170" fill="none" stroke="#28174b" stroke-width="1.5" stroke-dasharray="8, 6"/>
-  <circle cx="250" cy="250" r="140" fill="none" stroke="#00f3ff" stroke-width="1.5" opacity="0.4" filter="url(#glow)"/>
-  <circle cx="250" cy="250" r="110" fill="none" stroke="#ff007f" stroke-width="1.5" opacity="0.5" filter="url(#glow)"/>
+  <!-- Minimalist Vinyl Grooves -->
+  <circle cx="250" cy="250" r="190" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="2"/>
+  <circle cx="250" cy="250" r="160" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1.5"/>
+  <circle cx="250" cy="250" r="130" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
 
-  <!-- Center Label Hologram -->
-  <circle cx="250" cy="250" r="80" fill="url(#neonGradient)" opacity="0.9" filter="url(#glow)"/>
-  <circle cx="250" cy="250" r="75" fill="#0d0822"/>
-  
-  <!-- Cyber Waveforms in Center -->
-  <path d="M 200 250 Q 212 210 225 250 T 250 250 T 275 250 T 300 250" fill="none" stroke="#00f3ff" stroke-width="3" filter="url(#glow)"/>
-  <circle cx="250" cy="250" r="20" fill="#05020c" stroke="#ff007f" stroke-width="2"/>
-  <circle cx="250" cy="250" r="7" fill="#ffffff"/>
+  <!-- Center Label -->
+  <circle cx="250" cy="250" r="85" fill="url(#circleGrad)" opacity="0.85"/>
+  <circle cx="250" cy="250" r="75" fill="#090d16"/>
+  <circle cx="250" cy="250" r="22" fill="#1e1b4b" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="250" cy="250" r="8" fill="#ffffff"/>
 
-  <!-- Typography -->
-  <text x="250" y="80" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="22" fill="#00f3ff" letter-spacing="6" filter="url(#glow)">CYBERWAVE</text>
-  <text x="250" y="440" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" fill="#ff007f" letter-spacing="4">NEON SYNTHESIS</text>
+  <!-- Clean Typography -->
+  <text x="250" y="85" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="20" fill="#ffffff" letter-spacing="4">PIYUSH AUDIO</text>
+  <text x="250" y="435" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-weight="500" font-size="14" fill="#94a3b8" letter-spacing="2">ACOUSTIC ATMOSPHERE</text>
 </svg>
