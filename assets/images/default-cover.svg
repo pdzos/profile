@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#05030e"/>
+      <stop offset="50%" stop-color="#190733"/>
+      <stop offset="85%" stop-color="#3b0f55"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe600"/>
+      <stop offset="50%" stop-color="#ff007f"/>
+      <stop offset="100%" stop-color="#7928ca"/>
+    </linearGradient>
+    <linearGradient id="gridGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#05020c"/>
+      <stop offset="100%" stop-color="#00182b"/>
+    </linearGradient>
+    <filter id="neonGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="260" fill="url(#skyGrad)"/>
+
+  <!-- Stars -->
+  <g fill="#00f3ff" opacity="0.6">
+    <circle cx="100" cy="40" r="1.5"/><circle cx="250" cy="80" r="1"/><circle cx="420" cy="30" r="1.5"/>
+    <circle cx="780" cy="50" r="1.2"/><circle cx="950" cy="90" r="1"/><circle cx="1100" cy="35" r="1.8"/>
+    <circle cx="60" cy="120" r="1"/><circle cx="620" cy="70" r="2"/><circle cx="890" cy="130" r="1.5"/>
+  </g>
+
+  <!-- Synthwave Neon Sun -->
+  <circle cx="600" cy="220" r="110" fill="url(#sunGrad)" filter="url(#neonGlow)"/>
+  <!-- Sun stripes -->
+  <g fill="#190733">
+    <rect x="470" y="210" width="260" height="4"/>
+    <rect x="470" y="222" width="260" height="7"/>
+    <rect x="470" y="238" width="260" height="11"/>
+    <rect x="470" y="258" width="260" height="15"/>
+    <rect x="470" y="280" width="260" height="20"/>
+  </g>
+
+  <!-- Cyber City Skyline Silhouette -->
+  <path d="M 0 260 L 50 260 L 50 220 L 90 220 L 90 260 L 140 260 L 140 190 L 180 190 L 180 260 L 250 260 L 250 170 L 300 170 L 300 260 L 350 260 L 380 200 L 410 260 L 480 260 L 510 160 L 550 160 L 550 260 L 680 260 L 710 180 L 760 180 L 760 260 L 820 260 L 850 150 L 890 150 L 920 260 L 980 260 L 980 210 L 1030 210 L 1030 260 L 1100 260 L 1130 190 L 1170 190 L 1200 260 Z" fill="#0d0822"/>
+
+  <!-- Cyber Horizon Glow Line -->
+  <line x1="0" y1="260" x2="1200" y2="260" stroke="#00f3ff" stroke-width="3" filter="url(#neonGlow)"/>
+
+  <!-- Ground Grid Floor -->
+  <rect y="260" width="1200" height="140" fill="url(#gridGrad)"/>
+
+  <!-- Perspective Grid Lines -->
+  <!-- Horizontal lines with increasing spacing -->
+  <line x1="0" y1="265" x2="1200" y2="265" stroke="#ff007f" stroke-width="1" opacity="0.4"/>
+  <line x1="0" y1="273" x2="1200" y2="273" stroke="#ff007f" stroke-width="1.2" opacity="0.5"/>
+  <line x1="0" y1="285" x2="1200" y2="285" stroke="#ff007f" stroke-width="1.5" opacity="0.6"/>
+  <line x1="0" y1="303" x2="1200" y2="303" stroke="#00f3ff" stroke-width="1.8" opacity="0.7"/>
+  <line x1="0" y1="330" x2="1200" y2="330" stroke="#00f3ff" stroke-width="2" opacity="0.8"/>
+  <line x1="0" y1="368" x2="1200" y2="368" stroke="#00f3ff" stroke-width="2.5" opacity="0.9"/>
+
+  <!-- Perspective Vanishing Lines (radiating from horizon center 600, 260) -->
+  <g stroke="#00f3ff" stroke-width="1.5" opacity="0.6">
+    <line x1="600" y1="260" x2="600" y2="400"/>
+    <line x1="600" y1="260" x2="480" y2="400"/>
+    <line x1="600" y1="260" x2="330" y2="400"/>
+    <line x1="600" y1="260" x2="150" y2="400"/>
+    <line x1="600" y1="260" x2="-80" y2="400"/>
+    <line x1="600" y1="260" x2="720" y2="400"/>
+    <line x1="600" y1="260" x2="870" y2="400"/>
+    <line x1="600" y1="260" x2="1050" y2="400"/>
+    <line x1="600" y1="260" x2="1280" y2="400"/>
+  </g>
+</svg>
